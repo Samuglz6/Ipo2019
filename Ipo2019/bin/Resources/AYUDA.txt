@@ -1,0 +1,35 @@
+1.	Lo primero que necesitamos tener es instalado Java en nuestro equipo, en
+	caso de no tener Java instalado, en este enlace está disponible.
+
+2. 	Una vez instalado Java de forma correcta, para comprobarlo basta con
+	insertar el comando javac en el cmd, podemos proceder a ejecutar el
+	archivo .jar el cual ejecutara directamente el programa sin la necesidad de
+	abrir una IDE o el cmd.
+
+3.	Una vez abierto el programa nos encontramos con la primera ventana la cual es un login, 
+	en el cual tendremos que introducir nuestro usuario y contraseña 
+	a.	User; Beka                    Pass: 4321
+	b.	User: Samuel               Pass: 1234
+
+4.	Una vez abierta la interfaz principal, se puede  ver la interfaz propia del usuario con
+	el que ha entrado al programa, dependiendo de este la información mostrada en esta interfaz
+	ira variando. Esta información se puede observar en la casilla de Usuario.
+
+5.	Por otro lado tenemos la casilla de proyectos asociados, en la que aparecen los proyectos a
+	los que esta asociado el usuario, los cuales vamos a poder manejar como queramos. 
+
+6.	En la casilla de la lado vamos a poder ver la información relativa al proyecto o tarea que 
+	tengamos seleccionados, también vamos a poder modificar la información de ese proyecto o 
+	tarea según queramos.
+
+7.	En caso de necesitar manejar los miembros de un proyecto o tarea simplemente tendremos que 
+	darle al botón de editar que aparece al lado del campo miembros. 
+
+8.	Por ultimo en la interfaz principal también podemos ver la lista de todos los usuarios, los
+	cuales vamos a poder añadir con el boto de añadir nuevo usuario o de la misma forma eliminarlos.
+	También podemos acceder a la información de dicho usuario clicando dos veces sobre el.
+
+9.	Por ultimo, podemos acceder al servicio de mensajes, clicando en el botón de enviar mensaje, del
+	cual nos saltara a una nueva ventana muy intuitiva para el envió de mensajes.
+
+10.	Para salir del programa bastara con darle al botón de Salir o Log out.

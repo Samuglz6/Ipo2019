@@ -48,7 +48,8 @@ public class LoginWindow
 					LoginWindow window = new LoginWindow();
 					window.frameLogin.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Si");
+					//e.printStackTrace();
 				}
 			}
 		});
