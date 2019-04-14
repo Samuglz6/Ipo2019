@@ -3,37 +3,21 @@ package Presentation;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPasswordField;
-
 import java.awt.Color;
 import java.awt.GridBagLayout;
-import java.awt.Image;
-
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import java.awt.Toolkit;
 import javax.swing.JTextField;
 
 import Domain.Application;
-import Persistence.DBManager;
-
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Dialog.ModalExclusionType;
 import javax.swing.border.EmptyBorder;
 
-public class LoginWindow
+public class loginWindow
 {
 
 	JFrame frameLogin;
@@ -48,7 +32,7 @@ public class LoginWindow
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginWindow window = new LoginWindow();
+					loginWindow window = new loginWindow();
 					window.frameLogin.setVisible(true);
 				} catch (Exception e) {
 					System.out.println("Si");
@@ -63,7 +47,7 @@ public class LoginWindow
 	 * @throws SQLException 
 	 * @throws ClassNotFoundException 
 	 */
-	public LoginWindow() throws ClassNotFoundException, SQLException 
+	public loginWindow() throws ClassNotFoundException, SQLException 
 	{	
 		Application.getInstance();
 		initialize();
@@ -72,7 +56,7 @@ public class LoginWindow
 	
 	public void run() {
 		try {
-			LoginWindow window = new LoginWindow();
+			loginWindow window = new loginWindow();
 			window.frameLogin.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,8 +84,7 @@ public class LoginWindow
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		frameLogin.getContentPane().setLayout(gridBagLayout);
 		
-		JPanelBackground panel = new JPanelBackground();
-		panel.setBackground(LoginWindow.class.getResource("/Resources/Images/login_background.png").toString());
+		JPanel panel = new JPanel();
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		
 		panel.setBackground(Color.WHITE);
@@ -126,15 +109,14 @@ public class LoginWindow
 		panel.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(LoginWindow.class.getResource("/Resources/Images/logo_icon.png")));
+		label.setIcon(new ImageIcon(loginWindow.class.getResource("/Resources/Images/logo_icon.png")));
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 1;
 		gbc_label.gridy = 3;
 		panel.add(label, gbc_label);
 		
-		JPanelBackground panel_1 = new JPanelBackground();
-		panel_1.setBackground(LoginWindow.class.getResource("/Resources/Images/login_background.png").toString());
+		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.LIGHT_GRAY);
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
@@ -175,7 +157,7 @@ public class LoginWindow
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(LoginWindow.class.getResource("/Resources/Images/login_icon.png")));
+		btnNewButton.setIcon(new ImageIcon(loginWindow.class.getResource("/Resources/Images/login_icon.png")));
 		btnNewButton.setOpaque(false);
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setBorderPainted(false);

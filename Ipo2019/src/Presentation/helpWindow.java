@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -16,7 +15,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-public class HelpWindow extends JFrame {
+@SuppressWarnings("serial")
+public class helpWindow extends JFrame {
 
 	/**
 	 * Launch the application.
@@ -25,7 +25,7 @@ public class HelpWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HelpWindow frame = new HelpWindow();
+					helpWindow frame = new helpWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,10 +37,10 @@ public class HelpWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HelpWindow() {
+	public helpWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 650);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginWindow.class.getResource("/Resources/Images/icon_help.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(loginWindow.class.getResource("/Resources/Images/icon_help.png")));
 		setTitle("User help");
 		
 		JPanel panel = new JPanel();
