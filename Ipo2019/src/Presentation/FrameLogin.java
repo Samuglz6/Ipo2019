@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class loginWindow
+public class FrameLogin
 {
 
 	JFrame frameLogin;
@@ -32,7 +32,7 @@ public class loginWindow
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					loginWindow window = new loginWindow();
+					FrameLogin window = new FrameLogin();
 					window.frameLogin.setVisible(true);
 				} catch (Exception e) {
 					System.out.println("Si");
@@ -47,7 +47,7 @@ public class loginWindow
 	 * @throws SQLException 
 	 * @throws ClassNotFoundException 
 	 */
-	public loginWindow() throws ClassNotFoundException, SQLException 
+	public FrameLogin() throws ClassNotFoundException, SQLException 
 	{	
 		Application.getInstance();
 		initialize();
@@ -56,7 +56,7 @@ public class loginWindow
 	
 	public void run() {
 		try {
-			loginWindow window = new loginWindow();
+			FrameLogin window = new FrameLogin();
 			window.frameLogin.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,7 +109,7 @@ public class loginWindow
 		panel.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(loginWindow.class.getResource("/Resources/Images/logo_icon.png")));
+		label.setIcon(new ImageIcon(FrameLogin.class.getResource("/Resources/Images/logo_icon.png")));
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 1;
@@ -157,7 +157,7 @@ public class loginWindow
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(loginWindow.class.getResource("/Resources/Images/login_icon.png")));
+		btnNewButton.setIcon(new ImageIcon(FrameLogin.class.getResource("/Resources/Images/login_icon.png")));
 		btnNewButton.setOpaque(false);
 		btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setBorderPainted(false);

@@ -17,6 +17,9 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
 public class panelClientes extends JPanel {
@@ -29,10 +32,34 @@ public class panelClientes extends JPanel {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setEnabled(false);
+		splitPane.setContinuousLayout(true);
 		add(splitPane);
 		
 		JPanel panel_2 = new JPanel();
 		splitPane.setRightComponent(panel_2);
+		panel_2.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_2.add(panel_4, BorderLayout.NORTH);
+		GridBagLayout gbl_panel_4 = new GridBagLayout();
+		gbl_panel_4.columnWidths = new int[]{0, 0, 0, 0};
+		gbl_panel_4.rowHeights = new int[]{30, 0, 30, 0};
+		gbl_panel_4.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_4.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		panel_4.setLayout(gbl_panel_4);
+		
+		JLabel lblInformacionDelCliente = new JLabel("Informacion del Cliente");
+		lblInformacionDelCliente.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		GridBagConstraints gbc_lblInformacionDelCliente = new GridBagConstraints();
+		gbc_lblInformacionDelCliente.insets = new Insets(0, 0, 5, 5);
+		gbc_lblInformacionDelCliente.gridx = 1;
+		gbc_lblInformacionDelCliente.gridy = 1;
+		panel_4.add(lblInformacionDelCliente, gbc_lblInformacionDelCliente);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		panel_2.add(scrollPane_1, BorderLayout.CENTER);
 		
 		JPanel panel = new JPanel();
 		splitPane.setLeftComponent(panel);
@@ -42,13 +69,13 @@ public class panelClientes extends JPanel {
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.add(panel_3, BorderLayout.NORTH);
 		GridBagLayout gbl_panel_3 = new GridBagLayout();
-		gbl_panel_3.columnWidths = new int[]{75, 89, 150, 89, 0, 0};
-		gbl_panel_3.rowHeights = new int[]{10, 0, 10, 0};
+		gbl_panel_3.columnWidths = new int[]{75, 89, 120, 89, 0, 0};
+		gbl_panel_3.rowHeights = new int[]{30, 0, 30, 0};
 		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_3.setLayout(gbl_panel_3);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Clientes Normales");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.anchor = GridBagConstraints.NORTHWEST;
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
@@ -56,7 +83,7 @@ public class panelClientes extends JPanel {
 		gbc_btnNewButton.gridy = 1;
 		panel_3.add(btnNewButton, gbc_btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Clientes VIP");
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton_1.anchor = GridBagConstraints.NORTHWEST;
@@ -64,8 +91,17 @@ public class panelClientes extends JPanel {
 		gbc_btnNewButton_1.gridy = 1;
 		panel_3.add(btnNewButton_1, gbc_btnNewButton_1);
 		
-		JPanel panel_4 = new ClienteReutilizable();
-		panel.add(panel_4, BorderLayout.SOUTH);
-	
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		panel.add(scrollPane, BorderLayout.CENTER);
+		
+		JPanel panel_5 = new JPanel();
+		scrollPane.setViewportView(panel_5);
+		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		for(int i = 0; i < 10; i++)
+		{
+			panel_5.add(new ReusableClient());
+		}
 	}
 }

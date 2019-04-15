@@ -13,7 +13,7 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class ClienteReutilizable extends JPanel {
+public class ReusableProduct extends JPanel {
 	/**
 	 * 
 	 */
@@ -33,18 +33,25 @@ public class ClienteReutilizable extends JPanel {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JButton btnNewButton;
+	private JButton button;
+	private JLabel lblPrecio;
 	
-	public ClienteReutilizable() {
+	public ReusableProduct() {
+		iniciar();
+	}
+	
+	private void iniciar()
+	{
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{50, 0, 40, 0, 50, 0, 10, 0};
-		gridBagLayout.rowHeights = new int[]{10, 0, 0, 0, 10, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 20, 0, 20, 0, 30, 0};
+		gridBagLayout.rowHeights = new int[]{20, 0, 0, 0, 10, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(ClienteReutilizable.class.getResource("/Resources/Images/icon_user.png")));
+		label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/steak.png")));
 		gbc_label = new GridBagConstraints();
 		gbc_label.gridheight = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
@@ -52,7 +59,7 @@ public class ClienteReutilizable extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel("Nombre del Usuario");
+		lblNewLabel = new JLabel("Nombre del Producto");
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -60,7 +67,15 @@ public class ClienteReutilizable extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("Descripcion del Usuario");
+		button = new JButton("Ver Informacion");
+		GridBagConstraints gbc_button = new GridBagConstraints();
+		gbc_button.gridheight = 2;
+		gbc_button.insets = new Insets(0, 0, 5, 5);
+		gbc_button.gridx = 7;
+		gbc_button.gridy = 1;
+		add(button, gbc_button);
+		
+		lblNewLabel_1 = new JLabel("Descripcion del Producto");
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
@@ -68,10 +83,17 @@ public class ClienteReutilizable extends JPanel {
 		gbc_lblNewLabel_1.gridy = 3;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		btnNewButton = new JButton("Ver Informacion");
+		lblPrecio = new JLabel("Precio");
+		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
+		gbc_lblPrecio.insets = new Insets(0, 0, 5, 5);
+		gbc_lblPrecio.gridx = 5;
+		gbc_lblPrecio.gridy = 3;
+		add(lblPrecio, gbc_lblPrecio);
+		
+		btnNewButton = new JButton("A\u00F1adir al carrito");
 		gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 5;
+		gbc_btnNewButton.gridx = 7;
 		gbc_btnNewButton.gridy = 3;
 		add(btnNewButton, gbc_btnNewButton);
 

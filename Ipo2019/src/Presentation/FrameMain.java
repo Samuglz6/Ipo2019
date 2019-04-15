@@ -34,8 +34,9 @@ import javax.swing.JScrollPane;
 import java.awt.Font;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import javax.swing.border.BevelBorder;
 
-public class MainWindow {
+public class FrameMain {
 
 	private JFrame frameMain;
 	/**
@@ -49,7 +50,7 @@ public class MainWindow {
 			{
 				try
 				{
-					MainWindow window = new MainWindow();
+					FrameMain window = new FrameMain();
 					window.frameMain.setVisible(true);
 				}
 				catch (Exception e)
@@ -65,7 +66,7 @@ public class MainWindow {
 	 * @throws ClassNotFoundException 
 	 * @throws SQLException 
 	 */
-	public MainWindow() throws ClassNotFoundException, SQLException {
+	public FrameMain() throws ClassNotFoundException, SQLException {
 		Application.getInstance();
 		initialize();
 	}
@@ -85,17 +86,22 @@ public class MainWindow {
 		frameMain.setLocationRelativeTo(null);
 		
 		//Takes the image icon from the Resources' local repository
-		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(MainWindow.class.getResource("/Resources/Images/icon_network.png")));
+		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/icon_network.png")));
 		frameMain.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
 		frameMain.getContentPane().add(panel, BorderLayout.NORTH);
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 0};
-		gbl_panel.rowHeights = new int[]{150, 0};
-		gbl_panel.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
-		panel.setLayout(gbl_panel);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setEnabled(false);
+		panel.add(splitPane_1, BorderLayout.CENTER);
+		
+		JPanel panel_1 = new panelUsuario();
+		splitPane_1.setLeftComponent(panel_1);
+		
+		JPanel panel_3 = new panelHerramientas();
+		splitPane_1.setRightComponent(panel_3);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -189,6 +195,8 @@ public class MainWindow {
 		information_panel.add(ofertas_panel, "Ofertas");
 		
 		JTree selection_tree = new JTree();
+		selection_tree.setRootVisible(false);
+		selection_tree.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		selection_tree.addTreeSelectionListener(new TreeSelectionListener() {
 			public void valueChanged(TreeSelectionEvent arg0) {
 				System.out.println("Nodo seleccionado "+
@@ -216,7 +224,6 @@ public class MainWindow {
 				}
 			}
 		));
-		selection_tree.setRootVisible(false);
 		selection_tree.setFont(new Font("Sitka Subheading", Font.PLAIN, 33));
 		splitPane.setLeftComponent(selection_tree);
 
