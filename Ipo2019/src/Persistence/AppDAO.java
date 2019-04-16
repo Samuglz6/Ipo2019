@@ -2,7 +2,7 @@ package Persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Domain.User;
+import Domain.Client;
 
 public class AppDAO {
 
@@ -13,7 +13,7 @@ public class AppDAO {
 		DBManager.getInstance();
 	}
 	
-	public boolean login(String s, String p, User u) throws SQLException, ClassNotFoundException
+	public boolean login(String s, String p, Client u) throws SQLException, ClassNotFoundException
 	{
 		sql_sentence = "SELECT Persons.*, Users.username, Users.password "+
 					   "FROM Persons, Users "+

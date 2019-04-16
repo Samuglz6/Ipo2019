@@ -2,15 +2,9 @@ package Presentation;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
-
 import javax.swing.JScrollPane;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.JButton;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.GridBagLayout;
 import javax.swing.JSplitPane;
 import javax.swing.border.LineBorder;
@@ -22,18 +16,21 @@ import java.awt.Font;
 import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
-public class panelProductos extends JPanel {
+public class panelProducts extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
 	JPanel panel_1;
-	public panelProductos() {
+	
+	public panelProducts() {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
 		add(splitPane);
+		splitPane.setResizeWeight(0.104f);
+		splitPane.setDividerLocation(.2f);
 		
 		JPanel panel_2 = new JPanel();
 		splitPane.setRightComponent(panel_2);
@@ -67,49 +64,16 @@ public class panelProductos extends JPanel {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.add(panel_3, BorderLayout.NORTH);
-		GridBagLayout gbl_panel_3 = new GridBagLayout();
-		gbl_panel_3.columnWidths = new int[]{0, 0, 0, 89, 0, 0};
-		gbl_panel_3.rowHeights = new int[]{30, 0, 30, 0};
-		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		panel_3.setLayout(gbl_panel_3);
+		panel_3.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton = new JButton("Menus");
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.anchor = GridBagConstraints.NORTHWEST;
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 0;
-		gbc_btnNewButton.gridy = 1;
-		panel_3.add(btnNewButton, gbc_btnNewButton);
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+		scrollPane_2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		panel_3.add(scrollPane_2);
 		
-		JButton btnNewButton_2 = new JButton("Platos Individuales");
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_2.gridx = 1;
-		gbc_btnNewButton_2.gridy = 1;
-		panel_3.add(btnNewButton_2, gbc_btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Platos combinados");
-		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
-		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_3.gridx = 2;
-		gbc_btnNewButton_3.gridy = 1;
-		panel_3.add(btnNewButton_3, gbc_btnNewButton_3);
-		
-		JButton btnNewButton_1 = new JButton("Bebidas");
-		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
-		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_1.anchor = GridBagConstraints.NORTHWEST;
-		gbc_btnNewButton_1.gridx = 3;
-		gbc_btnNewButton_1.gridy = 1;
-		panel_3.add(btnNewButton_1, gbc_btnNewButton_1);
-		
-		JButton btnPostres = new JButton("Postres");
-		GridBagConstraints gbc_btnPostres = new GridBagConstraints();
-		gbc_btnPostres.insets = new Insets(0, 0, 5, 0);
-		gbc_btnPostres.gridx = 4;
-		gbc_btnPostres.gridy = 1;
-		panel_3.add(btnPostres, gbc_btnPostres);
+		JPanel panel_6 = new JPanel();
+		scrollPane_2.setViewportView(panel_6);
+		panel_6.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -122,6 +86,10 @@ public class panelProductos extends JPanel {
 		for(int i = 0; i < 10; i++)
 		{
 			panel_5.add(new ReusableProduct());
+		}
+		for(int i = 1; i <= 5; i++)
+		{
+			panel_6.add(new ReusableSelection(i, this.getClass().getName()));
 		}
 	}
 }

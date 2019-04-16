@@ -4,15 +4,11 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
-import Domain.Application;
 import Persistence.DBManager;
 
 import java.awt.GridBagConstraints;
@@ -22,6 +18,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JTextPane;
 import java.awt.BorderLayout;
 import javax.swing.JSplitPane;
@@ -30,11 +28,14 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.JScrollPane;
 import java.awt.Font;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.border.BevelBorder;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import java.awt.GridLayout;
+import javax.swing.border.EmptyBorder;
 
 public class FrameMain {
 
@@ -67,7 +68,6 @@ public class FrameMain {
 	 * @throws SQLException 
 	 */
 	public FrameMain() throws ClassNotFoundException, SQLException {
-		Application.getInstance();
 		initialize();
 	}
 
@@ -97,10 +97,10 @@ public class FrameMain {
 		splitPane_1.setEnabled(false);
 		panel.add(splitPane_1, BorderLayout.CENTER);
 		
-		JPanel panel_1 = new panelUsuario();
+		JPanel panel_1 = new panelUser();
 		splitPane_1.setLeftComponent(panel_1);
 		
-		JPanel panel_3 = new panelHerramientas();
+		JPanel panel_3 = new panelTools();
 		splitPane_1.setRightComponent(panel_3);
 		
 		JPanel panel_2 = new JPanel();
@@ -109,27 +109,35 @@ public class FrameMain {
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{50, 0, 0, 50, 40, 50, 50, 0, 80, 0};
 		gbl_panel_2.rowHeights = new int[]{30, 0, 0, 0, 0, 40, 20, 30, 0};
-		gbl_panel_2.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_2.columnWeights = new double[]{0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_2.setLayout(gbl_panel_2);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pedido actual:");
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_2.gridx = 1;
 		gbc_lblNewLabel_2.gridy = 1;
-		panel_2.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		panel_2.add(lblNewLabel_2, gbc_lblNewLabel_2);;
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBorder(new LineBorder(new Color(0,0,0)));;
-		GridBagConstraints gbc_textPane = new GridBagConstraints();
-		gbc_textPane.gridwidth = 2;
-		gbc_textPane.gridheight = 5;
-		gbc_textPane.insets = new Insets(0, 0, 5, 5);
-		gbc_textPane.fill = GridBagConstraints.BOTH;
-		gbc_textPane.gridx = 1;
-		gbc_textPane.gridy = 2;
-		panel_2.add(textPane, gbc_textPane);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setPreferredSize(new Dimension(100,100));
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridheight = 4;
+		gbc_scrollPane.gridwidth = 2;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 3;
+		panel_2.add(scrollPane, gbc_scrollPane);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new EmptyBorder(0, 0, 0, 0));
+		scrollPane.setViewportView(panel_4);
+		panel_4.setLayout(new GridLayout(0, 7, 2, 2));
 		
 		JButton btnNewButton_1 = new JButton("Vaciar");
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
@@ -139,9 +147,9 @@ public class FrameMain {
 		gbc_btnNewButton_1.gridy = 4;
 		panel_2.add(btnNewButton_1, gbc_btnNewButton_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("10 productos");
+		JLabel lblNewLabel_1 = new JLabel(panel_4.getComponentCount()+" productos");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 5;
 		gbc_lblNewLabel_1.gridy = 5;
@@ -149,8 +157,8 @@ public class FrameMain {
 		
 		JButton btnNewButton = new JButton("FINALIZAR");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridheight = 2;
 		gbc_btnNewButton.fill = GridBagConstraints.VERTICAL;
+		gbc_btnNewButton.gridheight = 2;
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 7;
 		gbc_btnNewButton.gridy = 5;
@@ -175,6 +183,7 @@ public class FrameMain {
 		JSplitPane splitPane = new JSplitPane();
 		frameMain.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
+		
 		JPanel information_panel = new JPanel();
 		splitPane.setRightComponent(information_panel);
 		information_panel.setLayout(new CardLayout(0, 0));
@@ -182,16 +191,16 @@ public class FrameMain {
 		JPanel default_panel = new panelDefault();
 		information_panel.add(default_panel, "Default");
 		
-		JPanel productos_panel = new panelProductos();
+		JPanel productos_panel = new panelProducts();
 		information_panel.add(productos_panel, "Productos");
 		
-		JPanel clientes_panel = new panelClientes();
+		JPanel clientes_panel = new panelClients();
 		information_panel.add(clientes_panel, "Clientes");
 		
-		JPanel pedidos_panel = new panelPedidos();
+		JPanel pedidos_panel = new panelOrders();
 		information_panel.add(pedidos_panel, "Pedidos");
 		
-		JPanel ofertas_panel = new panelOfertas();
+		JPanel ofertas_panel = new panelOffers();
 		information_panel.add(ofertas_panel, "Ofertas");
 		
 		JTree selection_tree = new JTree();
@@ -199,8 +208,6 @@ public class FrameMain {
 		selection_tree.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		selection_tree.addTreeSelectionListener(new TreeSelectionListener() {
 			public void valueChanged(TreeSelectionEvent arg0) {
-				System.out.println("Nodo seleccionado "+
-						arg0.getPath().getLastPathComponent());
 				String nodo = (arg0.getPath().getLastPathComponent()).toString();
 				switch (nodo)
 				{
@@ -227,7 +234,7 @@ public class FrameMain {
 		selection_tree.setFont(new Font("Sitka Subheading", Font.PLAIN, 33));
 		splitPane.setLeftComponent(selection_tree);
 
-		frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
+		/*frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
 		{
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) 
 		    {
@@ -247,14 +254,18 @@ public class FrameMain {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-		        	Date mydate = new Date();
-		        	Application.getUser().setLast_access(new SimpleDateFormat("dd-MM-yyyy").format(mydate));
-		        	System.out.println(Application.getUser().getLast_access());
+		        	//Date mydate = new Date();
+		        	//Application.getUser().setLast_access(new SimpleDateFormat("dd-MM-yyyy").format(mydate));
+		        	//System.out.println(Application.getUser().getLast_access());
 		        	
 		            System.exit(0);
 		        }
 		    }
-		});
+		});*/
+		for(int i = 0; i < 50; i++)
+		{
+			panel_4.add(new ReusableCart());
+		}
 	}
 	public Window getFrame() {
 		// TODO Auto-generated method stub

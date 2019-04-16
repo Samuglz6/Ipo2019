@@ -1,7 +1,5 @@
 package Presentation;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.GridBagLayout;
@@ -10,7 +8,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
 
-import Domain.Application;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.sql.SQLException;
@@ -19,28 +16,9 @@ import javax.swing.border.EmptyBorder;
 
 public class FrameLogin
 {
-
 	JFrame frameLogin;
 	private JTextField textField;
 	private JTextField textField_1;
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String [] args)
-	{
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FrameLogin window = new FrameLogin();
-					window.frameLogin.setVisible(true);
-				} catch (Exception e) {
-					System.out.println("Si");
-					//e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -49,7 +27,6 @@ public class FrameLogin
 	 */
 	public FrameLogin() throws ClassNotFoundException, SQLException 
 	{	
-		Application.getInstance();
 		initialize();
 	}
 	

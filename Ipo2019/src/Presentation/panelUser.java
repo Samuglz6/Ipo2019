@@ -8,12 +8,13 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 
-public class panelUsuario extends JPanel {
+@SuppressWarnings("serial")
+public class panelUser extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public panelUsuario() {
+	public panelUser() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{90, 0, 50, 0, 100, 200, 0};
 		gridBagLayout.rowHeights = new int[]{20, 25, 0, 0, 20, 0, 0, 20, 0};
@@ -22,7 +23,7 @@ public class panelUsuario extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(panelUsuario.class.getResource("/Resources/Images/waiter.png")));
+		lblNewLabel.setIcon(new ImageIcon(panelUser.class.getResource("/Resources/Images/waiter.png")));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.NORTH;
 		gbc_lblNewLabel.gridheight = 6;

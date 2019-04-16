@@ -1,25 +1,24 @@
 package Presentation;
 
-import javax.swing.JPanel;
-import java.awt.GridBagLayout;
-import javax.swing.JButton;
-
 import java.awt.Color;
 import java.awt.GridBagConstraints;
-import javax.swing.JLabel;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
-import javax.swing.ImageIcon;
-import javax.swing.border.BevelBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+
 @SuppressWarnings("serial")
-public class ReusableProduct extends JPanel {
+public class ReusableOrder extends JPanel {
 
 	/**
 	 * Create the panel.
-	*/
-	
+	 */
 	private Color color;
 	private GridBagLayout gridBagLayout;
 	private GridBagConstraints gbc_label;
@@ -30,10 +29,11 @@ public class ReusableProduct extends JPanel {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JButton btnNewButton;
-	private JButton button;
 	private JLabel lblPrecio;
+	private JLabel lblTipo;
+	private JLabel lblEstado;
 	
-	public ReusableProduct() {
+	public ReusableOrder() {
 		iniciar();
 	}
 	
@@ -41,14 +41,14 @@ public class ReusableProduct extends JPanel {
 	{
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 20, 0, 20, 0, 30, 0};
-		gridBagLayout.rowHeights = new int[]{20, 0, 0, 0, 10, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 40, 0, 40, 0, 30, 0};
+		gridBagLayout.rowHeights = new int[]{20, 0, 10, 0, 10, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/steak.png")));
+		label.setIcon(new ImageIcon(ReusableOrder.class.getResource("/Resources/Images/cooking.png")));
 		gbc_label = new GridBagConstraints();
 		gbc_label.gridheight = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
@@ -56,7 +56,7 @@ public class ReusableProduct extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel("Nombre del Producto");
+		lblNewLabel = new JLabel("N\u00BA del pedido");
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -64,15 +64,21 @@ public class ReusableProduct extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		button = new JButton("Ver Informacion");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.gridheight = 2;
-		gbc_button.insets = new Insets(0, 0, 5, 5);
-		gbc_button.gridx = 7;
-		gbc_button.gridy = 1;
-		add(button, gbc_button);
+		lblTipo = new JLabel("Tipo");
+		GridBagConstraints gbc_lblTipo = new GridBagConstraints();
+		gbc_lblTipo.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTipo.gridx = 5;
+		gbc_lblTipo.gridy = 1;
+		add(lblTipo, gbc_lblTipo);
 		
-		lblNewLabel_1 = new JLabel("Descripcion del Producto");
+		lblEstado = new JLabel("Estado");
+		GridBagConstraints gbc_lblEstado = new GridBagConstraints();
+		gbc_lblEstado.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEstado.gridx = 7;
+		gbc_lblEstado.gridy = 1;
+		add(lblEstado, gbc_lblEstado);
+		
+		lblNewLabel_1 = new JLabel("Nombre del Cliente");
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
@@ -80,14 +86,14 @@ public class ReusableProduct extends JPanel {
 		gbc_lblNewLabel_1.gridy = 3;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		lblPrecio = new JLabel("Precio");
+		lblPrecio = new JLabel("Coste");
 		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
 		gbc_lblPrecio.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrecio.gridx = 5;
 		gbc_lblPrecio.gridy = 3;
 		add(lblPrecio, gbc_lblPrecio);
 		
-		btnNewButton = new JButton("A\u00F1adir al carrito");
+		btnNewButton = new JButton("Ver Informacion");
 		gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 7;

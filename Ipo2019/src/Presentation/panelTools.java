@@ -12,12 +12,12 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JSplitPane;
 
-public class panelHerramientas extends JPanel {
+public class panelTools extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public panelHerramientas() {
+	public panelTools() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -33,7 +33,7 @@ public class panelHerramientas extends JPanel {
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(panelHerramientas.class.getResource("/Resources/Images/logo_icon.png")));
+		lblNewLabel.setIcon(new ImageIcon(panelTools.class.getResource("/Resources/Images/logo_icon.png")));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 0, 5);
 		gbc_lblNewLabel.gridx = 2;
@@ -56,7 +56,7 @@ public class panelHerramientas extends JPanel {
 				fhel.setVisible(true);
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(panelHerramientas.class.getResource("/Resources/Images/icon_help.png")));
+		btnNewButton.setIcon(new ImageIcon(panelTools.class.getResource("/Resources/Images/icon_help.png")));
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton.gridx = 1;
@@ -70,7 +70,7 @@ public class panelHerramientas extends JPanel {
 				fop.setVisible(true);
 			}
 		});
-		btnNewButton_1.setIcon(new ImageIcon(panelHerramientas.class.getResource("/Resources/Images/icon_options.png")));
+		btnNewButton_1.setIcon(new ImageIcon(panelTools.class.getResource("/Resources/Images/icon_options.png")));
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_1.gridx = 3;
@@ -78,7 +78,7 @@ public class panelHerramientas extends JPanel {
 		panel_1.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setIcon(new ImageIcon(panelHerramientas.class.getResource("/Resources/Images/icon_power.png")));
+		btnNewButton_2.setIcon(new ImageIcon(panelTools.class.getResource("/Resources/Images/icon_power.png")));
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 		gbc_btnNewButton_2.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton_2.gridx = 5;

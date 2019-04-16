@@ -10,6 +10,9 @@ import javax.swing.JLabel;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
+
+import Domain.Client;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -25,31 +28,36 @@ public class ReusableClient extends JPanel {
 	
 	private Color color;
 	private GridBagLayout gridBagLayout;
+	private GridBagConstraints gbc_btnNewButton;
 	private GridBagConstraints gbc_label;
 	private GridBagConstraints gbc_lblNewLabel; 
 	private GridBagConstraints gbc_lblNewLabel_1; 
-	private GridBagConstraints gbc_btnNewButton;
+	private JButton btnNewButton;
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	private JButton btnNewButton;
 	
-	public ReusableClient() {
-		iniciar();
+	public ReusableClient(Client c) {
+		iniciar(c);
 	}
 	
-	private void iniciar()
+	private void iniciar(Client c)
 	{
 		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 90, 0, 30, 0};
 		gridBagLayout.rowHeights = new int[]{20, 0, 10, 0, 10, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/icon_user.png")));
+		try {
+			label.setIcon((c.getImage()));
+		}catch(Exception e){
+			label.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/icon_error.png")));
+		}
+		
 		gbc_label = new GridBagConstraints();
 		gbc_label.gridheight = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
@@ -57,7 +65,7 @@ public class ReusableClient extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel("Nombre del Usuario");
+		lblNewLabel = new JLabel("Nombre del usuario");
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);

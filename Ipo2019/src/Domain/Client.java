@@ -2,36 +2,39 @@ package Domain;
 
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
-import Persistence.UserDAO;
+import Persistence.DAOclient;
 
-public class User
+public class Client
 {	
 	private String name;
 	private String surname;
+	private String address;
 	private String mail;
 	private String phone;
 	private String last_access;
-	private ImageIcon user_image;
-	private UserDAO dao_user;
+	private ImageIcon image;
+	private DAOclient dao_user;
 	
 	/*--------------------------------------------------------------------------
 			Constructors. The void one is for create empty auxiliary Users
 	--------------------------------------------------------------------------*/
 	
-	public User(String name, String surname, String mail, String phone, 
-				String last_access, ImageIcon user_image) throws ClassNotFoundException, SQLException
+	public Client(String name, String surname, String address, String mail, String phone, 
+				String last_access, ImageIcon image) throws ClassNotFoundException, SQLException
 	{
 		this.name = name;
 		this.surname = surname;
+		this.address = address;
 		this.mail = mail;
 		this.phone = phone;
 		this.last_access = last_access;
-		this.user_image = user_image;
-		this.dao_user = new UserDAO();
+		this.image = image;
+		this.dao_user = new DAOclient();
 	}
-	public User() throws ClassNotFoundException, SQLException
+	
+	public Client() throws ClassNotFoundException, SQLException
 	{
-		dao_user = new UserDAO();
+		dao_user = new DAOclient();
 	}
 	
 	/*--------------------------------------------------------------------------
@@ -52,22 +55,22 @@ public class User
 	
 	public void insertUser() throws SQLException
 	{
-		dao_user.insert(User.this);
+		dao_user.insert(Client.this);
 	}
 	
 	public void readUser() throws SQLException
 	{
-		dao_user.read(User.this);
+		dao_user.read(Client.this);
 	}
 	
 	public void updateUser() throws SQLException
 	{
-		dao_user.update(User.this);
+		dao_user.update(Client.this);
 	}
 	
 	public void deleteUser() throws SQLException
 	{
-		dao_user.update(User.this);
+		dao_user.update(Client.this);
 	}
 	
 	
@@ -91,6 +94,17 @@ public class User
 	{
 		this.surname = surname;
 	}
+	
+	public String getAddress()
+	{
+		return this.address;
+	}
+	
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+	
 	public String getMail() 
 	{
 		return mail;
@@ -124,12 +138,12 @@ public class User
 	{
 		this.last_access = last_access;
 	}
-	public ImageIcon getUser_image()
+	public ImageIcon getImage()
 	{
-		return user_image;
+		return image;
 	}
-	public void setUser_image(ImageIcon user_image)
+	public void setImage(ImageIcon image)
 	{
-		this.user_image = user_image;
+		this.image = image;
 	}
 }
