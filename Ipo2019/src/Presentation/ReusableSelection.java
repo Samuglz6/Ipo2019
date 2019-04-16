@@ -51,15 +51,15 @@ public class ReusableSelection extends JPanel {
 		
 		switch(a.split("Presentation.", 2)[1])
 		{
-			case "panelClients":
+			case "PanelClients":
 				clientes(i);
 			break;
 			
-			case "panelProducts":
+			case "PanelProducts":
 				productos(i);
 			break;
 			
-			case "panelOrders":
+			case "PanelOrders":
 				pedidos(i);
 			break;
 		}

@@ -30,7 +30,6 @@ public class ReusableProduct extends JPanel {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JButton btnNewButton;
-	private JButton button;
 	private JLabel lblPrecio;
 	
 	public ReusableProduct() {
@@ -63,14 +62,6 @@ public class ReusableProduct extends JPanel {
 		gbc_lblNewLabel.gridx = 3;
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
-		
-		button = new JButton("Ver Informacion");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.gridheight = 2;
-		gbc_button.insets = new Insets(0, 0, 5, 5);
-		gbc_button.gridx = 7;
-		gbc_button.gridy = 1;
-		add(button, gbc_button);
 		
 		lblNewLabel_1 = new JLabel("Descripcion del Producto");
 		gbc_lblNewLabel_1 = new GridBagConstraints();

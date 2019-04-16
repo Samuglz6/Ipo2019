@@ -8,7 +8,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -17,14 +16,14 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.border.LineBorder;
 
 @SuppressWarnings("serial")
-public class panelOrders extends JPanel {
+public class PanelOffers extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	JPanel panel_1;
+JPanel panel_1;
 	
-	public panelOrders() {
+	public PanelOffers() {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -62,20 +61,6 @@ public class panelOrders extends JPanel {
 		splitPane.setLeftComponent(panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.add(panel_3, BorderLayout.NORTH);
-		panel_3.setLayout(new BorderLayout(0, 0));
-		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-		scrollPane_2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		panel_3.add(scrollPane_2, BorderLayout.NORTH);
-		
-		JPanel panel_6 = new JPanel();
-		scrollPane_2.setViewportView(panel_6);
-		panel_6.setLayout(new GridLayout(1, 0, 0, 0));
-		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		panel.add(scrollPane, BorderLayout.CENTER);
@@ -86,12 +71,7 @@ public class panelOrders extends JPanel {
 		
 		for(int i = 0; i < 10; i++)
 		{
-			panel_5.add(new ReusableOrder());
-		}
-		
-		for(int i = 1; i <= 5; i++)
-		{
-			panel_6.add(new ReusableSelection(i, this.getClass().getName()));
+			panel_5.add(new ReusableProduct());
 		}
 	}
 

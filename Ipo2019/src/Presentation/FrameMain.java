@@ -97,10 +97,10 @@ public class FrameMain {
 		splitPane_1.setEnabled(false);
 		panel.add(splitPane_1, BorderLayout.CENTER);
 		
-		JPanel panel_1 = new panelUser();
+		JPanel panel_1 = new PanelUser();
 		splitPane_1.setLeftComponent(panel_1);
 		
-		JPanel panel_3 = new panelTools();
+		JPanel panel_3 = new PanelTools();
 		splitPane_1.setRightComponent(panel_3);
 		
 		JPanel panel_2 = new JPanel();
@@ -188,19 +188,19 @@ public class FrameMain {
 		splitPane.setRightComponent(information_panel);
 		information_panel.setLayout(new CardLayout(0, 0));
 		
-		JPanel default_panel = new panelDefault();
+		JPanel default_panel = new PanelDefault();
 		information_panel.add(default_panel, "Default");
 		
-		JPanel productos_panel = new panelProducts();
+		JPanel productos_panel = new PanelProducts();
 		information_panel.add(productos_panel, "Productos");
 		
-		JPanel clientes_panel = new panelClients();
+		JPanel clientes_panel = new PanelClients();
 		information_panel.add(clientes_panel, "Clientes");
 		
-		JPanel pedidos_panel = new panelOrders();
+		JPanel pedidos_panel = new PanelOrders();
 		information_panel.add(pedidos_panel, "Pedidos");
 		
-		JPanel ofertas_panel = new panelOffers();
+		JPanel ofertas_panel = new PanelOffers();
 		information_panel.add(ofertas_panel, "Ofertas");
 		
 		JTree selection_tree = new JTree();

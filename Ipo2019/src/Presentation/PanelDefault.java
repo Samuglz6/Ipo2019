@@ -8,16 +8,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 @SuppressWarnings("serial")
-public class panelDefault extends JPanel {
+public class PanelDefault extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public panelDefault() {
+	public PanelDefault() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(panelDefault.class.getResource("/Resources/Images/cooker_icon.jpeg")));
+		label.setIcon(new ImageIcon(PanelDefault.class.getResource("/Resources/Images/cooker_icon.jpeg")));
 		label.setBackground(Color.WHITE);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		add(label, BorderLayout.CENTER);

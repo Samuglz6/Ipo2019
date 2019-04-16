@@ -24,11 +24,9 @@ public class ReusableOrder extends JPanel {
 	private GridBagConstraints gbc_label;
 	private GridBagConstraints gbc_lblNewLabel; 
 	private GridBagConstraints gbc_lblNewLabel_1; 
-	private GridBagConstraints gbc_btnNewButton;
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	private JButton btnNewButton;
 	private JLabel lblPrecio;
 	private JLabel lblTipo;
 	private JLabel lblEstado;
@@ -43,7 +41,7 @@ public class ReusableOrder extends JPanel {
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 40, 0, 40, 0, 30, 0};
 		gridBagLayout.rowHeights = new int[]{20, 0, 10, 0, 10, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
@@ -71,13 +69,6 @@ public class ReusableOrder extends JPanel {
 		gbc_lblTipo.gridy = 1;
 		add(lblTipo, gbc_lblTipo);
 		
-		lblEstado = new JLabel("Estado");
-		GridBagConstraints gbc_lblEstado = new GridBagConstraints();
-		gbc_lblEstado.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEstado.gridx = 7;
-		gbc_lblEstado.gridy = 1;
-		add(lblEstado, gbc_lblEstado);
-		
 		lblNewLabel_1 = new JLabel("Nombre del Cliente");
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
@@ -93,12 +84,12 @@ public class ReusableOrder extends JPanel {
 		gbc_lblPrecio.gridy = 3;
 		add(lblPrecio, gbc_lblPrecio);
 		
-		btnNewButton = new JButton("Ver Informacion");
-		gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 7;
-		gbc_btnNewButton.gridy = 3;
-		add(btnNewButton, gbc_btnNewButton);
+		lblEstado = new JLabel("Estado");
+		GridBagConstraints gbc_lblEstado = new GridBagConstraints();
+		gbc_lblEstado.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEstado.gridx = 7;
+		gbc_lblEstado.gridy = 3;
+		add(lblEstado, gbc_lblEstado);
 
 		addMouseListener(new MouseAdapter() {
 			@Override

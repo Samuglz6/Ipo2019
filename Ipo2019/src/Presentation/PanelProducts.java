@@ -14,16 +14,20 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ScrollPaneConstants;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 @SuppressWarnings("serial")
-public class panelProducts extends JPanel {
+public class PanelProducts extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
 	JPanel panel_1;
 	
-	public panelProducts() {
+	public PanelProducts() {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
@@ -55,7 +59,14 @@ public class panelProducts extends JPanel {
 		panel_4.add(lblInformacionDelCliente, gbc_lblInformacionDelCliente);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		panel_2.add(scrollPane_1, BorderLayout.CENTER);
+		
+		JPanel panel_7 = new JPanel();
+		scrollPane_1.setViewportView(panel_7);
+		panel_7.setLayout(new BoxLayout(panel_7, BoxLayout.X_AXIS));
+		InfoProduct infoProduct = new InfoProduct();
+		panel_7.add(infoProduct);
 		
 		JPanel panel = new JPanel();
 		splitPane.setLeftComponent(panel);

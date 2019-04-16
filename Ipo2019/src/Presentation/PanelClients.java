@@ -19,7 +19,7 @@ import java.awt.Font;
 import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
-public class panelClients extends JPanel {
+public class PanelClients extends JPanel {
 	
 	private GridBagConstraints gbc_lblInformacionDelCliente;
 	private GridBagLayout gbl_panel_4;
@@ -35,7 +35,7 @@ public class panelClients extends JPanel {
 	private JScrollPane scrollPane_2;
 	private JPanel panel_6;
 	
-	public panelClients() {
+	public PanelClients() {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		splitPane = new JSplitPane();

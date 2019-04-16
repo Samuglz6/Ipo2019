@@ -28,14 +28,13 @@ public class ReusableClient extends JPanel {
 	
 	private Color color;
 	private GridBagLayout gridBagLayout;
-	private GridBagConstraints gbc_btnNewButton;
 	private GridBagConstraints gbc_label;
 	private GridBagConstraints gbc_lblNewLabel; 
 	private GridBagConstraints gbc_lblNewLabel_1; 
-	private JButton btnNewButton;
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
+	private JLabel label_1;
 	
 	public ReusableClient(Client c) {
 		iniciar(c);
@@ -47,7 +46,7 @@ public class ReusableClient extends JPanel {
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 90, 0, 30, 0};
 		gridBagLayout.rowHeights = new int[]{20, 0, 10, 0, 10, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
@@ -81,12 +80,13 @@ public class ReusableClient extends JPanel {
 		gbc_lblNewLabel_1.gridy = 3;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		btnNewButton = new JButton("Ver Informacion");
-		gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 5;
-		gbc_btnNewButton.gridy = 3;
-		add(btnNewButton, gbc_btnNewButton);
+		label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/badge.png")));
+		GridBagConstraints gbc_label_1 = new GridBagConstraints();
+		gbc_label_1.insets = new Insets(0, 0, 5, 5);
+		gbc_label_1.gridx = 5;
+		gbc_label_1.gridy = 3;
+		add(label_1, gbc_label_1);
 
 		addMouseListener(new MouseAdapter() {
 			@Override
