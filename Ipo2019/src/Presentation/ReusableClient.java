@@ -81,7 +81,7 @@ public class ReusableClient extends JPanel {
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/badge.png")));
+		label_1.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/Clients/vip.png")));
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
 		gbc_label_1.insets = new Insets(0, 0, 5, 5);
 		gbc_label_1.gridx = 5;

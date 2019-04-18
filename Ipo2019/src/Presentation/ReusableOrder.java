@@ -46,7 +46,7 @@ public class ReusableOrder extends JPanel {
 		setLayout(gridBagLayout);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(ReusableOrder.class.getResource("/Resources/Images/cooking.png")));
+		label.setIcon(new ImageIcon(ReusableOrder.class.getResource("/Resources/Images/Orders/cooking.png")));
 		gbc_label = new GridBagConstraints();
 		gbc_label.gridheight = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);

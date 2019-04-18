@@ -55,59 +55,59 @@ public class ReusableFoodAllergen extends JPanel {
 		switch(i)
 		{
 			case 1:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/gluten.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/gluten.png")));
 				lblNewLabel_1.setText("Gluten.");
 			break;
 			case 2:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/crustacean.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/crustacean.png")));
 				lblNewLabel_1.setText("Crustaceos.");
 			break;
 			case 3:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/eggs.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/eggs.png")));
 				lblNewLabel_1.setText("Huevos y derivados.");
 			break;
 			case 4:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/animal.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/animal.png")));
 				lblNewLabel_1.setText("Pescado.");
 			break;
 			case 5:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/peanut.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/peanut.png")));
 				lblNewLabel_1.setText("Cacahuetes y derivados.");
 			break;
 			case 6:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/leaf.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/leaf.png")));
 				lblNewLabel_1.setText("Soja.");
 			break;
 			case 7:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/milk.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/milk.png")));
 				lblNewLabel_1.setText("Lacteos y derivados.");
 			break;
 			case 8:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/almond.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/almond.png")));
 				lblNewLabel_1.setText("Frutos Secos.");
 			break;
 			case 9:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/leek.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/leek.png")));
 				lblNewLabel_1.setText("Apio.");
 			break;
 			case 10:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/mustard.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/mustard.png")));
 				lblNewLabel_1.setText("Mostaza.");
 			break;
 			case 11:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/sesame.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/sesame.png")));
 				lblNewLabel_1.setText("Granos de Sesamo.");
 			break;
 			case 12:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/molecular.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/molecular.png")));
 				lblNewLabel_1.setText("Dioxido de Azufre y Sulfitos");
 			break;
 			case 13:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/mollusc.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/mollusc.png")));
 				lblNewLabel_1.setText("Moluscos.");
 			break;
 			case 14:
-				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/lupin.png")));
+				lblNewLabel.setIcon(new ImageIcon(ReusableFoodAllergen.class.getResource("/Resources/Images/Alergenos/lupin.png")));
 				lblNewLabel_1.setText("Altramuces.");
 			break;
 		}

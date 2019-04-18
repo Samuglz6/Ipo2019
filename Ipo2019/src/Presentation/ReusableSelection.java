@@ -19,6 +19,7 @@ public class ReusableSelection extends JPanel {
 	 */
 	private Color color;
 	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel;
 	
 	public ReusableSelection(int i, String a)
 	{
@@ -34,8 +35,7 @@ public class ReusableSelection extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/icon_picture.png")));
+		lblNewLabel = new JLabel("");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 1;
@@ -83,22 +83,27 @@ public class ReusableSelection extends JPanel {
 		{
 			case 1:
 				lblNewLabel_1.setText("Menus");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/menu.png")));
 			break;
 			
 			case 2:
 				lblNewLabel_1.setText("Platos Individuales");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/individual.png")));
 			break;
 			
 			case 3:
 				lblNewLabel_1.setText("Platos Combinados");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/combined.png")));
 			break;
 			
 			case 4:
 				lblNewLabel_1.setText("Bebidas");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/drink.png")));
 			break;
 		
 			case 5:
 				lblNewLabel_1.setText("Postres");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/dessert.png")));
 			break;
 		}
 	}
@@ -109,9 +114,11 @@ public class ReusableSelection extends JPanel {
 		{
 			case 1:
 				lblNewLabel_1.setText("Clientes Normales");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/team.png")));
 			break;
 			case 2:
 				lblNewLabel_1.setText("Clientes VIP");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/vip.png")));
 			break;
 		}
 	}
@@ -122,22 +129,27 @@ public class ReusableSelection extends JPanel {
 		{
 			case 1:
 				lblNewLabel_1.setText("Todos");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/store.png")));
 			break;
 			
 			case 2:
 				lblNewLabel_1.setText("En Cocina");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/frying-pan.png")));
 			break;
 			
 			case 3:
 				lblNewLabel_1.setText("En Reparto");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/motorcycle.png")));
 			break;
 			
 			case 4:
 				lblNewLabel_1.setText("A la Espera");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/bowl.png")));
 			break;
 		
 			case 5:
 				lblNewLabel_1.setText("Finalizado");
+				lblNewLabel.setIcon(new ImageIcon(ReusableSelection.class.getResource("/Resources/Images/Selection/food.png")));
 			break;
 		}
 	}
