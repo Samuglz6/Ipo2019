@@ -28,9 +28,9 @@ JPanel panel_1;
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
+		splitPane.setDividerSize(1);
+		splitPane.setDividerLocation(700);
 		add(splitPane);
-		splitPane.setResizeWeight(0.15f);
-		splitPane.setDividerLocation(.2f);
 		
 		JPanel panel_2 = new JPanel();
 		splitPane.setRightComponent(panel_2);
@@ -56,6 +56,11 @@ JPanel panel_1;
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_2.add(scrollPane_1, BorderLayout.CENTER);
+		
+		JPanel panel_3 = new JPanel();
+		scrollPane_1.setViewportView(panel_3);
+		panel_3.setLayout(new BorderLayout(0, 0));
+		panel_3.add(new InfoProduct());
 		
 		JPanel panel = new JPanel();
 		splitPane.setLeftComponent(panel);

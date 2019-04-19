@@ -40,7 +40,6 @@ public class FrameLogin
 		}
 	}
 
-
 	/**
 	 * Initialize the contents of the frame.
 	 */

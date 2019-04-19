@@ -31,10 +31,10 @@ public class PanelProducts extends JPanel {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setDividerSize(1);
+		splitPane.setDividerLocation(700);
 		splitPane.setEnabled(false);
 		add(splitPane);
-		splitPane.setResizeWeight(0.104f);
-		splitPane.setDividerLocation(.2f);
 		
 		JPanel panel_2 = new JPanel();
 		splitPane.setRightComponent(panel_2);
@@ -73,7 +73,7 @@ public class PanelProducts extends JPanel {
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_3.setBorder(null);
 		panel.add(panel_3, BorderLayout.NORTH);
 		panel_3.setLayout(new BorderLayout(0, 0));
 		

@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class ReusableCart extends JPanel {
@@ -22,11 +23,12 @@ public class ReusableCart extends JPanel {
 	 * Create the panel.
 	 */
 	public ReusableCart() {
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBackground(Color.WHITE);
+		setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{5, 0, 0, 0, 0, 5, 0};
+		gridBagLayout.columnWidths = new int[]{5, 0, 0, 0, 5, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{5, 0, 5, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
@@ -45,6 +47,7 @@ public class ReusableCart extends JPanel {
 		add(spinner, gbc_spinner);
 		
 		JButton btnNewButton = new JButton("x");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		Border emptyBorder = BorderFactory.createEmptyBorder();
 		btnNewButton.setBorder(emptyBorder);
 		btnNewButton.setOpaque(false);
@@ -62,7 +65,7 @@ public class ReusableCart extends JPanel {
 		btnNewButton.setPreferredSize(new Dimension(41,20));
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 4;
+		gbc_btnNewButton.gridx = 5;
 		gbc_btnNewButton.gridy = 1;
 		add(btnNewButton, gbc_btnNewButton);
 

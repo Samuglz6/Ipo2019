@@ -39,11 +39,11 @@ public class PanelClients extends JPanel {
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		splitPane = new JSplitPane();
+		splitPane.setDividerSize(1);
+		splitPane.setDividerLocation(700);
 		splitPane.setEnabled(false);
 		splitPane.setContinuousLayout(true);
 		add(splitPane);
-		splitPane.setResizeWeight(0.1467f);
-		splitPane.setDividerLocation(.2f);
 		
 		panel_2 = new JPanel();
 		splitPane.setRightComponent(panel_2);

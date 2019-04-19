@@ -84,7 +84,6 @@ public class FrameHelp extends JFrame {
 		tabbedPane.add("Pedidos", new JPanel());
 		tabbedPane.add("Ofertas", new JPanel());
 		tabbedPane.add("Sobre Nosotros", new JPanel());
-		
 	}
 
 }

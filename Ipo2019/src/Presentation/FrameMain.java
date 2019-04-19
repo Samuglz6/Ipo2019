@@ -16,6 +16,7 @@ import java.awt.Insets;
 
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -36,6 +37,10 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.GridLayout;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.SoftBevelBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Frame;
 
 public class FrameMain {
 
@@ -79,7 +84,8 @@ public class FrameMain {
 	private void initialize() throws ClassNotFoundException {
 		frameMain = new JFrame();
 		frameMain.setResizable(false);
-		frameMain.setBounds(100, 100, (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth()-100, (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-100);
+		frameMain.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		frameMain.setExtendedState(Frame.MAXIMIZED_BOTH); 
 		frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/*The method setLocationRelativeTo(null) will center our window in the
 		  middle of our screen*/
@@ -90,21 +96,27 @@ public class FrameMain {
 		frameMain.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(null);
 		frameMain.getContentPane().add(panel, BorderLayout.NORTH);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setDividerSize(0);
 		splitPane_1.setEnabled(false);
+		splitPane_1.setBorder(null);
 		panel.add(splitPane_1, BorderLayout.CENTER);
 		
 		JPanel panel_1 = new PanelUser();
+		panel_1.setBorder(null);
 		splitPane_1.setLeftComponent(panel_1);
 		
 		JPanel panel_3 = new PanelTools();
+		panel_3.setBorder(null);
 		splitPane_1.setRightComponent(panel_3);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_2.setBackground(Color.BLACK);
+		panel_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, new Color(0, 0, 0), Color.BLACK, Color.BLACK, Color.BLACK));
 		frameMain.getContentPane().add(panel_2, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{50, 0, 0, 50, 40, 50, 50, 0, 80, 0};
@@ -114,6 +126,8 @@ public class FrameMain {
 		panel_2.setLayout(gbl_panel_2);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pedido actual:");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_2.setForeground(Color.WHITE);
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
@@ -135,11 +149,12 @@ public class FrameMain {
 		panel_2.add(scrollPane, gbc_scrollPane);
 		
 		JPanel panel_4 = new JPanel();
-		panel_4.setBorder(new EmptyBorder(0, 0, 0, 0));
+		panel_4.setBorder(null);
 		scrollPane.setViewportView(panel_4);
 		panel_4.setLayout(new GridLayout(0, 7, 2, 2));
 		
 		JButton btnNewButton_1 = new JButton("Vaciar");
+		btnNewButton_1.setBackground(Color.WHITE);
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
@@ -148,6 +163,8 @@ public class FrameMain {
 		panel_2.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		JLabel lblNewLabel_1 = new JLabel(panel_4.getComponentCount()+" productos");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
@@ -156,6 +173,7 @@ public class FrameMain {
 		panel_2.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("FINALIZAR");
+		btnNewButton.setBackground(Color.WHITE);
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.fill = GridBagConstraints.VERTICAL;
 		gbc_btnNewButton.gridheight = 2;
@@ -165,6 +183,8 @@ public class FrameMain {
 		panel_2.add(btnNewButton, gbc_btnNewButton);
 		
 		JLabel lblNewLabel_3 = new JLabel("Total:");
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
 		gbc_lblNewLabel_3.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 5);
@@ -173,6 +193,8 @@ public class FrameMain {
 		panel_2.add(lblNewLabel_3, gbc_lblNewLabel_3);
 		
 		JLabel lblNewLabel = new JLabel("100 \u20AC");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -181,14 +203,19 @@ public class FrameMain {
 		panel_2.add(lblNewLabel, gbc_lblNewLabel);
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setDividerSize(0);
+		splitPane.setDividerLocation(250);
+		splitPane.setBorder(null);
 		frameMain.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
 		
 		JPanel information_panel = new JPanel();
+		information_panel.setBorder(null);
 		splitPane.setRightComponent(information_panel);
 		information_panel.setLayout(new CardLayout(0, 0));
 		
 		JPanel default_panel = new PanelDefault();
+		default_panel.setBorder(null);
 		information_panel.add(default_panel, "Default");
 		
 		JPanel productos_panel = new PanelProducts();
@@ -205,7 +232,7 @@ public class FrameMain {
 		
 		JTree selection_tree = new JTree();
 		selection_tree.setRootVisible(false);
-		selection_tree.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		selection_tree.setBorder(new LineBorder(Color.BLACK, 2));
 		selection_tree.addTreeSelectionListener(new TreeSelectionListener() {
 			public void valueChanged(TreeSelectionEvent arg0) {
 				String nodo = (arg0.getPath().getLastPathComponent()).toString();

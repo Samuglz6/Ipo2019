@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.Font;
 
 public class ReusableSelection extends JPanel {
 
@@ -23,6 +24,7 @@ public class ReusableSelection extends JPanel {
 	
 	public ReusableSelection(int i, String a)
 	{
+		setBackground(Color.WHITE);
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		iniciar(i, a);
 	}
@@ -43,6 +45,7 @@ public class ReusableSelection extends JPanel {
 		add(lblNewLabel, gbc_lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("Text");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 1;
