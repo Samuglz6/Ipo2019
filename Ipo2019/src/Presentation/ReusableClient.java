@@ -15,6 +15,7 @@ import Domain.Client;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.border.SoftBevelBorder;
 
 public class ReusableClient extends JPanel {
 	/**
@@ -42,7 +43,7 @@ public class ReusableClient extends JPanel {
 	
 	private void iniciar(Client c)
 	{
-		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 90, 0, 30, 0};
 		gridBagLayout.rowHeights = new int[]{20, 0, 10, 0, 10, 0};

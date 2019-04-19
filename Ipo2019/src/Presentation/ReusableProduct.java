@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.border.SoftBevelBorder;
 
 @SuppressWarnings("serial")
 public class ReusableProduct extends JPanel {
@@ -38,7 +39,7 @@ public class ReusableProduct extends JPanel {
 	
 	private void iniciar()
 	{
-		setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{40, 0, 40, 0, 20, 0, 20, 0, 30, 0};
 		gridBagLayout.rowHeights = new int[]{20, 0, 0, 0, 10, 0};

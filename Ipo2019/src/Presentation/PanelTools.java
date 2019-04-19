@@ -18,6 +18,7 @@ import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 
+@SuppressWarnings("serial")
 public class PanelTools extends JPanel {
 
 	/**
@@ -29,6 +30,7 @@ public class PanelTools extends JPanel {
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setDividerSize(0);
+		splitPane.setBorder(null);
 		add(splitPane, BorderLayout.CENTER);
 		
 		JPanel panel = new JPanel();

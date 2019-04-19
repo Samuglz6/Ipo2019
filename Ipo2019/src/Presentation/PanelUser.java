@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
 
 @SuppressWarnings("serial")
 public class PanelUser extends JPanel {
@@ -30,12 +31,12 @@ public class PanelUser extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBorder(new LineBorder(new Color(170,135,80), 3, true));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setIcon(new ImageIcon(PanelUser.class.getResource("/Resources/Images/chef.png")));
+		lblNewLabel.setIcon(new ImageIcon(PanelUser.class.getResource("/Resources/Images/waiter.png")));
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.anchor = GridBagConstraints.NORTH;
-		gbc_lblNewLabel.gridheight = 6;
+		gbc_lblNewLabel.gridheight = 7;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 1;

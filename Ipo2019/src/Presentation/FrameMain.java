@@ -83,6 +83,7 @@ public class FrameMain {
 	@SuppressWarnings("serial")
 	private void initialize() throws ClassNotFoundException {
 		frameMain = new JFrame();
+		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/black-cat.png")));
 		frameMain.setResizable(false);
 		frameMain.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		frameMain.setExtendedState(Frame.MAXIMIZED_BOTH); 
@@ -90,9 +91,6 @@ public class FrameMain {
 		/*The method setLocationRelativeTo(null) will center our window in the
 		  middle of our screen*/
 		frameMain.setLocationRelativeTo(null);
-		
-		//Takes the image icon from the Resources' local repository
-		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/icon_network.png")));
 		frameMain.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
@@ -260,6 +258,17 @@ public class FrameMain {
 		));
 		selection_tree.setFont(new Font("Sitka Subheading", Font.PLAIN, 33));
 		splitPane.setLeftComponent(selection_tree);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(null);
+		panel_5.setBackground(Color.BLACK);
+		frameMain.getContentPane().add(panel_5, BorderLayout.EAST);
+		GridBagLayout gbl_panel_5 = new GridBagLayout();
+		gbl_panel_5.columnWidths = new int[]{250, 0};
+		gbl_panel_5.rowHeights = new int[]{0};
+		gbl_panel_5.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel_5.rowWeights = new double[]{Double.MIN_VALUE};
+		panel_5.setLayout(gbl_panel_5);
 
 		/*frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
 		{

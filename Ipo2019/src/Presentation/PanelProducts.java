@@ -18,6 +18,8 @@ import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.SoftBevelBorder;
 
 @SuppressWarnings("serial")
 public class PanelProducts extends JPanel {
@@ -28,11 +30,13 @@ public class PanelProducts extends JPanel {
 	JPanel panel_1;
 	
 	public PanelProducts() {
+		setBorder(null);
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setDividerSize(1);
 		splitPane.setDividerLocation(700);
+		splitPane.setBorder(null);
 		splitPane.setEnabled(false);
 		add(splitPane);
 		
@@ -78,11 +82,14 @@ public class PanelProducts extends JPanel {
 		panel_3.setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBorder(null);
 		scrollPane_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 		scrollPane_2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		panel_3.add(scrollPane_2);
 		
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBorder(null);
 		scrollPane_2.setViewportView(panel_6);
 		panel_6.setLayout(new GridLayout(1, 0, 0, 0));
 		

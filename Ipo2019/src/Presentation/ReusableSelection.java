@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class ReusableSelection extends JPanel {
 
@@ -25,7 +27,7 @@ public class ReusableSelection extends JPanel {
 	public ReusableSelection(int i, String a)
 	{
 		setBackground(Color.WHITE);
-		setBorder(new LineBorder(new Color(0, 0, 0)));
+		setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		iniciar(i, a);
 	}
 	

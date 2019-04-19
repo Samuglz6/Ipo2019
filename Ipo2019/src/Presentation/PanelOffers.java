@@ -24,12 +24,14 @@ public class PanelOffers extends JPanel {
 JPanel panel_1;
 	
 	public PanelOffers() {
+		setBorder(null);
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
 		splitPane.setDividerSize(1);
 		splitPane.setDividerLocation(700);
+		splitPane.setBorder(null);
 		add(splitPane);
 		
 		JPanel panel_2 = new JPanel();

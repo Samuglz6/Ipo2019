@@ -25,11 +25,13 @@ public class PanelOrders extends JPanel {
 	JPanel panel_1;
 	
 	public PanelOrders() {
+		setBorder(null);
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setDividerSize(1);
 		splitPane.setDividerLocation(700);
+		splitPane.setBorder(null);
 		splitPane.setEnabled(false);
 		add(splitPane);
 
@@ -59,6 +61,10 @@ public class PanelOrders extends JPanel {
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_2.add(scrollPane_1, BorderLayout.CENTER);
 		
+		JPanel panel_7 = new JPanel();
+		scrollPane_1.setViewportView(panel_7);
+		panel_7.setLayout(new BorderLayout(0, 0));
+		
 		JPanel panel = new JPanel();
 		splitPane.setLeftComponent(panel);
 		panel.setLayout(new BorderLayout(0, 0));
@@ -69,11 +75,13 @@ public class PanelOrders extends JPanel {
 		panel_3.setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBorder(null);
 		scrollPane_2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 		scrollPane_2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		panel_3.add(scrollPane_2, BorderLayout.NORTH);
 		
 		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(null);
 		scrollPane_2.setViewportView(panel_6);
 		panel_6.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -94,6 +102,8 @@ public class PanelOrders extends JPanel {
 		{
 			panel_6.add(new ReusableSelection(i, this.getClass().getName()));
 		}
+		
+		panel_7.add(new InfoOrder());
 	}
 
 }
