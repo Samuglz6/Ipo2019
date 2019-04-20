@@ -19,6 +19,7 @@ import java.awt.FlowLayout;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class FrameOptions extends JFrame {
@@ -27,6 +28,8 @@ public class FrameOptions extends JFrame {
 	 * Create the frame.
 	 */
 	public FrameOptions() {
+		getContentPane().setBackground(Color.WHITE);
+		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 700, 600);
 		getContentPane().setLayout(new BorderLayout(0, 0));
@@ -35,6 +38,7 @@ public class FrameOptions extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		getContentPane().add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -53,6 +57,7 @@ public class FrameOptions extends JFrame {
 		panel.add(btnNewButton_2);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
 		getContentPane().add(panel_1, BorderLayout.NORTH);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
@@ -83,12 +88,36 @@ public class FrameOptions extends JFrame {
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+		tabbedPane.setBackground(Color.WHITE);
 		tabbedPane.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		tabbedPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_2.add(tabbedPane, BorderLayout.CENTER);
-		tabbedPane.addTab("Apariencia", new JScrollPane());
-		tabbedPane.addTab("Idioma", new JScrollPane());
-		tabbedPane.addTab("Version", new JScrollPane());
+		JScrollPane scrollPane = new JScrollPane();
+		tabbedPane.addTab("Apariencia", scrollPane);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(Color.WHITE);
+		scrollPane.setViewportView(panel_3);
+		JScrollPane scrollPane_1 = new JScrollPane();
+		tabbedPane.addTab("Idioma", scrollPane_1);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(Color.WHITE);
+		scrollPane_1.setViewportView(panel_4);
+		JScrollPane scrollPane_2 = new JScrollPane();
+		tabbedPane.addTab("Version", scrollPane_2);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
+		scrollPane_2.setViewportView(panel_5);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
+		getContentPane().add(panel_6, BorderLayout.WEST);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(Color.WHITE);
+		getContentPane().add(panel_7, BorderLayout.EAST);
 	}
 
 }

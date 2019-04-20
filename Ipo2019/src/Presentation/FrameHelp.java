@@ -38,6 +38,7 @@ public class FrameHelp extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		getContentPane().add(panel, BorderLayout.NORTH);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
@@ -63,12 +64,15 @@ public class FrameHelp extends JFrame {
 		panel.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
 		getContentPane().add(panel_1, BorderLayout.SOUTH);
 		
 		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.WHITE);
 		getContentPane().add(panel_2, BorderLayout.WEST);
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(Color.WHITE);
 		getContentPane().add(panel_3, BorderLayout.EAST);
 		
 		JPanel panel_4 = new JPanel();
@@ -76,14 +80,27 @@ public class FrameHelp extends JFrame {
 		panel_4.setLayout(new BorderLayout(0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+		tabbedPane.setBackground(Color.WHITE);
 		tabbedPane.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_4.add(tabbedPane, BorderLayout.CENTER);
-		tabbedPane.add("Aplicacion", new JPanel());
-		tabbedPane.add("Productos", new JPanel());
-		tabbedPane.add("Clientes", new JPanel());
-		tabbedPane.add("Pedidos", new JPanel());
-		tabbedPane.add("Ofertas", new JPanel());
-		tabbedPane.add("Sobre Nosotros", new JPanel());
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
+		tabbedPane.add("Aplicacion", panel_5);
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.WHITE);
+		tabbedPane.add("Productos", panel_6);
+		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(Color.WHITE);
+		tabbedPane.add("Clientes", panel_7);
+		JPanel panel_8 = new JPanel();
+		panel_8.setBackground(Color.WHITE);
+		tabbedPane.add("Pedidos", panel_8);
+		JPanel panel_9 = new JPanel();
+		panel_9.setBackground(Color.WHITE);
+		tabbedPane.add("Ofertas", panel_9);
+		JPanel panel_10 = new JPanel();
+		panel_10.setBackground(Color.WHITE);
+		tabbedPane.add("Sobre Nosotros", panel_10);
 	}
 
 }

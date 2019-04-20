@@ -56,8 +56,10 @@ public class FrameMain {
 			{
 				try
 				{
-					FrameMain window = new FrameMain();
-					window.frameMain.setVisible(true);
+					FrameLogin fr = new FrameLogin();
+					fr.run();
+					//FrameMain window = new FrameMain();
+					//window.frameMain.setVisible(true);
 				}
 				catch (Exception e)
 				{
@@ -108,9 +110,21 @@ public class FrameMain {
 		panel_1.setBorder(null);
 		splitPane_1.setLeftComponent(panel_1);
 		
-		JPanel panel_3 = new PanelTools();
-		panel_3.setBorder(null);
-		splitPane_1.setRightComponent(panel_3);
+		JSplitPane splitPane_2 = new JSplitPane();
+		splitPane_1.setRightComponent(splitPane_2);
+		splitPane_2.setDividerSize(0);
+		splitPane_2.setBorder(null);
+		
+		JPanel panel_3 = new JPanel();
+		splitPane_2.setLeftComponent(panel_3);
+		panel_3.setLayout(new BorderLayout(0, 0));
+		panel_3.setBorder(new LineBorder(Color.DARK_GRAY,1));
+		panel_3.add(new PanelLogo());
+		
+		JPanel panel_6 = new JPanel();
+		splitPane_2.setRightComponent(panel_6);
+		panel_6.setLayout(new BorderLayout(0, 0));
+		panel_6.add(new PanelTools());
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.BLACK);

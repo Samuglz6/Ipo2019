@@ -28,34 +28,10 @@ public class PanelTools extends JPanel {
 		setBorder(null);
 		setLayout(new BorderLayout(0, 0));
 		
-		JSplitPane splitPane = new JSplitPane();
-		splitPane.setDividerSize(0);
-		splitPane.setBorder(null);
-		add(splitPane, BorderLayout.CENTER);
-		
-		JPanel panel = new JPanel();
-		panel.setBorder(null);
-		panel.setBackground(Color.WHITE);
-		splitPane.setLeftComponent(panel);
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 30, 0, 0, 30, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0};
-		gbl_panel.columnWeights = new double[]{1.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		panel.setLayout(gbl_panel);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(PanelTools.class.getResource("/Resources/Images/logo_icon.png")));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel.gridx = 2;
-		gbc_lblNewLabel.gridy = 1;
-		panel.add(lblNewLabel, gbc_lblNewLabel);
-		
 		JPanel panel_1 = new JPanel();
+		add(panel_1, BorderLayout.CENTER);
 		panel_1.setBorder(null);
 		panel_1.setBackground(Color.BLACK);
-		splitPane.setRightComponent(panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 30, 10, 30, 40, 0};
 		gbl_panel_1.rowHeights = new int[]{25, 0, 10, 40, 15, 40, 0, 0};
@@ -95,6 +71,12 @@ public class PanelTools extends JPanel {
 		panel_1.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		JButton btnNewButton_3 = new JButton("Editar Usuarios");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FrameEditClients fec = new FrameEditClients();
+				fec.setVisible(true);
+			}
+		});
 		btnNewButton_3.setBackground(Color.WHITE);
 		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
 		gbc_btnNewButton_3.fill = GridBagConstraints.BOTH;
@@ -105,6 +87,12 @@ public class PanelTools extends JPanel {
 		panel_1.add(btnNewButton_3, gbc_btnNewButton_3);
 		
 		JButton btnEditarProductos = new JButton("Editar Productos");
+		btnEditarProductos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FrameEditProducts fep = new FrameEditProducts();
+				fep.setVisible(true);
+			}
+		});
 		btnEditarProductos.setBackground(Color.WHITE);
 		GridBagConstraints gbc_btnEditarProductos = new GridBagConstraints();
 		gbc_btnEditarProductos.fill = GridBagConstraints.BOTH;
