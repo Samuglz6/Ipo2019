@@ -56,10 +56,10 @@ public class FrameMain {
 			{
 				try
 				{
-					FrameLogin fr = new FrameLogin();
-					fr.run();
-					//FrameMain window = new FrameMain();
-					//window.frameMain.setVisible(true);
+					//FrameLogin fr = new FrameLogin();
+					//fr.run();
+					FrameMain window = new FrameMain();
+					window.frameMain.setVisible(true);
 				}
 				catch (Exception e)
 				{
