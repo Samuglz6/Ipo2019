@@ -22,6 +22,9 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -207,6 +210,11 @@ public class FrameLogin
 		panel_7.setLayout(gbl_panel_7);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		btnNewButton.setIcon(new ImageIcon(FrameLogin.class.getResource("/Resources/Images/user-login-button.png")));
 		btnNewButton.setBorder(BorderFactory.createEmptyBorder());
 		btnNewButton.setBackground(null);
