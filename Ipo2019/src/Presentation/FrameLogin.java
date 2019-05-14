@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
@@ -19,6 +21,9 @@ import javax.swing.JComboBox;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.border.SoftBevelBorder;
+
+import Domain.User;
+
 import javax.swing.border.BevelBorder;
 import java.awt.FlowLayout;
 import javax.swing.JSplitPane;
@@ -36,6 +41,7 @@ public class FrameLogin
 	private Color color;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
+	private User user;
 	/**
 	 * Create the application.
 	 * @throws SQLException 
@@ -59,8 +65,9 @@ public class FrameLogin
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() 
+	private void initialize() throws ClassNotFoundException, SQLException
 	{
+		user = new User();
 		frameLogin = new JFrame();
 		frameLogin.setResizable(false);
 		frameLogin.setBounds(100, 100, 472, 715);
@@ -212,7 +219,52 @@ public class FrameLogin
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				if(textField.getText() != null && textField_1.getText() != null) {
+
+					try {
+						user = new User();
+						user.setUserName(textField.getText());
+						user.setPass(textField_1.getText());
+						if(user.read()) {
+						System.out.println("READ TRUE");	
+						}
+					} catch (ClassNotFoundException | SQLException e) {
+						
+						e.printStackTrace();
+					}
+					
+					
+					
+					
+					
+					
+					
+					/*try {
+						ArrayList<User> users = user.getAllUsers();
+						for(int i = 0; i < users.size(); i++) {
+							System.out.println("Comparando " + users.get(i).getUserName() + " con " + textField.getText());
+							System.out.println("Comparando " + users.get(i).getPass() + " con " + textField_1.getText());
+							if (users.get(i).getUserName().equalsIgnoreCase(textField.getText())) {
+								if(users.get(i).getUserName().equalsIgnoreCase(textField_1.getText())) {
+									try {
+										FrameMain window = new FrameMain();
+										window.frameMain.setVisible(true);
+										frameLogin.setVisible(false);
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+									
+								}		
+							}
+						}
+					} catch (ClassNotFoundException | SQLException e) {
+						
+						e.printStackTrace();
+					}*/
+					
+				}else {
+					
+				}
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(FrameLogin.class.getResource("/Resources/Images/user-login-button.png")));

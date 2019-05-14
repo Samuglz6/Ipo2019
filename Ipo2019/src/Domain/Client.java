@@ -70,7 +70,7 @@ public class Client
 	
 	public void deleteUser() throws SQLException
 	{
-		dao_user.update(Client.this);
+		dao_user.delete(Client.this);
 	}
 	
 	

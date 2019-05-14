@@ -44,7 +44,7 @@ import java.awt.Frame;
 
 public class FrameMain {
 
-	private JFrame frameMain;
+	JFrame frameMain;
 	/**
 	 * Launch the application.
 	 */

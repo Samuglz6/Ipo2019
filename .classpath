@@ -5,5 +5,10 @@
 	<classpathentry kind="lib" path="Ipo2019/jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="Ipo2019/jgoodies-forms-1.8.0.jar"/>
 	<classpathentry kind="lib" path="Ipo2019/miglayout15-swing.jar"/>
+	<classpathentry kind="lib" path="Ipo2019/src/Resources/Libraries/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="Ipo2019/src/Resources/Libraries/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Ipo2019/src/Resources/Libraries/hsqldb-2.3.1.jar"/>
+	<classpathentry kind="lib" path="Ipo2019/src/Resources/Libraries/jackcess-2.1.6.jar"/>
+	<classpathentry kind="lib" path="Ipo2019/src/Resources/Libraries/ucanaccess-4.0.1.jar"/>
 	<classpathentry kind="output" path="Ipo2019/bin"/>
 </classpath>

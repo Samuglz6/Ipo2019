@@ -1,6 +1,7 @@
 package Domain;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Persistence.DAOUser;
 
@@ -29,6 +30,16 @@ public class User {
 			this.pass = pass;
 			this.personalId = personalId;
 			this.daoUser = new DAOUser();
+		}
+		
+		public ArrayList<User> getAllUsers() throws ClassNotFoundException, SQLException{
+			daoUser.readAll();
+			return daoUser.getUsers();
+		}
+		
+		public boolean read() throws SQLException {
+			if (daoUser.read(this).getPersonalId() != null) return true;
+			else return false;
 		}
 		
 		public int getId() {
