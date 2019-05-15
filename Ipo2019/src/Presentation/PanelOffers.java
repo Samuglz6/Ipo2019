@@ -76,10 +76,10 @@ JPanel panel_1;
 		scrollPane.setViewportView(panel_5);
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		/*for(int i = 0; i < 10; i++)
+		for(int i = 0; i < 10; i++)
 		{
 			panel_5.add(new ReusableProduct(null));
-		}*/
+		}
 	}
 
 }

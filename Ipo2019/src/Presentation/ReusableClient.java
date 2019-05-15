@@ -73,7 +73,7 @@ public class ReusableClient extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel(c.getMail()+""+c.getPhone());
+		lblNewLabel_1 = new JLabel("Email: "+c.getMail()+"            Telefono: "+c.getPhone());
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);

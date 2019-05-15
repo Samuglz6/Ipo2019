@@ -109,11 +109,12 @@ public class PanelProducts extends JPanel {
 		
 		Product product = new Product();
 		ArrayList<Product> product_list = product.getAllProducts();
-		
+		System.out.println(product_list.size());
 		for(int i = 0; i < product_list.size(); i++)
 		{
 			panel_5.add(new ReusableProduct(product_list.get(i)));
 		}
+		
 		for(int i = 1; i <= 5; i++)
 		{
 			panel_6.add(new ReusableSelection(i, this.getClass().getName()));

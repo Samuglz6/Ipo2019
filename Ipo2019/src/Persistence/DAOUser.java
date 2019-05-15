@@ -52,7 +52,6 @@ public class DAOUser {
 		{
 			aux = new User(rs.getInt("Id"), rs.getString("username"), rs.getString("password"), 
 						    rs.getString("person_id"));
-			System.out.println("Users length" + users.size());
 			users.add(aux);
 		}
 	}

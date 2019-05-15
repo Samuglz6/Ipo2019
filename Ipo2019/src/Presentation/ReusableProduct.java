@@ -50,7 +50,24 @@ public class ReusableProduct extends JPanel {
 		setLayout(gridBagLayout);
 		
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/steak.png")));
+		if(p != null)
+			switch(p.getType())
+			{
+				case "Menu":
+					label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/menu.png")));
+				break;
+				case "Dessert":
+					label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/dessert.png")));
+				break;
+				case "Meal":
+					label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/meal.png")));
+				break;
+				case "Beberage":
+					label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/drink.png")));
+				break;	
+			}
+		else label.setIcon(new ImageIcon(ReusableProduct.class.getResource("/Resources/Images/Products/steak.png")));
+		
 		gbc_label = new GridBagConstraints();
 		gbc_label.gridheight = 3;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
@@ -58,7 +75,8 @@ public class ReusableProduct extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel(p.getName());
+		if(p != null) lblNewLabel = new JLabel(p.getName());
+		else lblNewLabel = new JLabel("Nombre del producto");
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -66,7 +84,8 @@ public class ReusableProduct extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("Descripcion del Producto");
+		if(p != null) lblNewLabel_1 = new JLabel(p.getType());
+		else lblNewLabel_1 = new JLabel("Descripcion del producto");
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
@@ -74,7 +93,8 @@ public class ReusableProduct extends JPanel {
 		gbc_lblNewLabel_1.gridy = 3;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		lblPrecio = new JLabel("Precio");
+		if(p != null) lblPrecio = new JLabel("Precio: "+p.getPrice());
+		else lblPrecio = new JLabel("Precio");
 		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
 		gbc_lblPrecio.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrecio.gridx = 5;

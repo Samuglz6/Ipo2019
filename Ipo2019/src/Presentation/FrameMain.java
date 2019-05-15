@@ -185,7 +185,7 @@ public class FrameMain extends JFrame{
 		gbc_btnNewButton_1.gridy = 4;
 		panel_2.add(btnNewButton_1, gbc_btnNewButton_1);
 		
-		JLabel lblNewLabel_1 = new JLabel(panel_4.getComponentCount()+" productos");
+		JLabel lblNewLabel_1 = new JLabel("10 productos");
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();

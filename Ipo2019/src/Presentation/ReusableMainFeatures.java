@@ -2,21 +2,15 @@ package Presentation;
 
 import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.border.LineBorder;
 import java.awt.GridBagLayout;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
 @SuppressWarnings("serial")
@@ -25,7 +19,6 @@ public class ReusableMainFeatures extends JPanel {
 	 * Create the panel.
 	 */
 	private JLabel lblNewLabel;
-	private Color color;
 	
 	public ReusableMainFeatures(int i)
 	{

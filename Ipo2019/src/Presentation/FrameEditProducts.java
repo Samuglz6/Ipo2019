@@ -148,7 +148,8 @@ public class FrameEditProducts extends JFrame {
 		textField_3.setColumns(10);
 		
 		btnNewButton = new JButton("A\u00F1adir");
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setForeground(Color.WHITE);
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 1;
@@ -156,7 +157,8 @@ public class FrameEditProducts extends JFrame {
 		contentPane.add(btnNewButton, gbc_btnNewButton);
 		
 		btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setForeground(Color.BLACK);
+		btnNewButton_1.setBackground(Color.BLACK);
+		btnNewButton_1.setForeground(Color.WHITE);
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
 		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton_1.gridx = 3;

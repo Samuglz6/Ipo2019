@@ -10,17 +10,17 @@ public class Product {
 	private int id;
 	private String name;
 	private String type;
-	private String[] ingredientes;
+	private String ingredientes;
 	private int price;
 	private DAOProduct dao_product;
 	
 	
-	public Product(String name, String type, String[] ingredientes, int price, DAOProduct dao_product) {
+	public Product(String name, String type, String ingredientes, int price) throws ClassNotFoundException, SQLException {
 		this.name = name;
 		this.type = type;
 		this.ingredientes = ingredientes;
 		this.price = price;
-		this.dao_product = dao_product;
+		this.dao_product = new DAOProduct();
 	}
 	
 	public Product() throws ClassNotFoundException, SQLException
@@ -69,11 +69,11 @@ public class Product {
 		this.type = type;
 	}
 
-	public String[] getIngredientes() {
+	public String getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(String[] ingredientes) {
+	public void setIngredientes(String ingredientes) {
 		this.ingredientes = ingredientes;
 	}
 

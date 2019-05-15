@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 import Domain.Product;
+import Domain.User;
 
 
 
@@ -69,7 +70,9 @@ public class DAOProduct {
 			
 		while(rs.next())
 		{
-
+			aux = new Product(rs.getString("product_name"), rs.getString("type"), 
+				    rs.getString("ingredients"), rs.getInt("price"));
+			productos.add(aux);
 		}
 	}
 	
