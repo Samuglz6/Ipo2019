@@ -63,7 +63,7 @@ public class DAOProduct {
 		Product aux;
 		ResultSet rs;
 		sql_sentence = "SELECT *" +
-					   "FROM Persons;";
+					   "FROM Products;";
 		
 		rs = DBManager.retrieve(sql_sentence);
 			

@@ -236,35 +236,30 @@ public class FrameLogin
 				lblNewLabel_5.setVisible(false);
 				
 				if(!(textField.getText().isEmpty() || textField_1.getText().isEmpty())) {
-					if(!textField.getText().isEmpty()){
-						if(!textField_1.getText().isEmpty()) {
-						
-							try {
-								user = new User();
-								user.setUserName(textField.getText());
-								user.setPass(textField_1.getText());
-								if(user.read()) {
-									try {
-										FrameMain window = new FrameMain(user);
-										window.setVisible(true);
-										frameLogin.setVisible(false);
-									} catch (Exception e) {
-										e.printStackTrace();
-									}
+						try {
+							user = new User();
+							user.setUserName(textField.getText());
+							user.read();
+		
+							if(user.getPass().equals(textField_1.getText()))
+							{
+								try {
+									FrameMain window = new FrameMain(user);
+									window.setVisible(true);
+									frameLogin.setVisible(false);
+								} catch (Exception e) {
+									e.printStackTrace();
 								}
-							}catch (ClassNotFoundException | SQLException e) {				
-								e.printStackTrace();
+							}
+							else
+							{
 								lblNewLabel_5.setText("Usuario o Contraseña incorrectos.");
 								lblNewLabel_5.setVisible(true);
-							}					
-						}else {
-							textField_1.setBackground(Color.RED);
-						}
-					}else{
-						textField.setBackground(Color.RED);
-					}
+							}
+						}catch (Exception e) {				
+							e.printStackTrace();
+						}					
 				}else{
-					System.out.println("aqui");
 					textField.setBackground(Color.RED);
 					textField_1.setBackground(Color.RED);
 				}

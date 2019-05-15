@@ -122,6 +122,6 @@ public class PanelClients extends JPanel {
 			panel_6.add(new ReusableSelection(i, this.getClass().getName()));
 		}
 		
-		//panel_1.add(new InfoClient());
+		panel_1.add(new InfoClient());
 	}
 }

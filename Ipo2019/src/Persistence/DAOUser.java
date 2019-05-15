@@ -24,9 +24,7 @@ public class DAOUser {
 		ResultSet rs;
 		sql_sentence = "SELECT * "+
 				   	   "FROM Users "+
-				   	   "WHERE Users.username = '" + u.getUserName() +
-				   	   "' AND Users.password = '" + u.getPass() +
-				   	   "';";
+				   	   "WHERE Users.username = '" + u.getUserName()+"';";
 		rs = DBManager.retrieve(sql_sentence);
 		
 		while(rs.next())
