@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import java.awt.GridBagLayout;
+
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -86,7 +88,7 @@ public class ReusableMainFeatures extends JPanel {
 				comprobarSeleccionado(p);
 				setBackground(new Color(0,0,0));
 				lblNewLabel.setForeground(new Color(255,255,255));
-				//((FrameMain)p.getTopLevelAncestor()).cambioSeleccion(lblNewLabel.getText());;
+				((FrameMain)p.getTopLevelAncestor()).cambioSeleccion(lblNewLabel.getText());
 			}
 		});
 	}

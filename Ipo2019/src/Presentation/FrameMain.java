@@ -50,9 +50,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Frame;
 
-public class FrameMain {
+public class FrameMain extends JFrame{
 
-	JFrame frameMain;
+	//JFrame frameMain;
 	String seleccion;
 	JPanel panel_7;
 	Container information_panel;
@@ -94,20 +94,20 @@ public class FrameMain {
 	 */
 	@SuppressWarnings("serial")
 	private void initialize(User user) throws ClassNotFoundException {
-		frameMain = new JFrame();
-		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/black-cat.png")));
-		frameMain.setResizable(false);
-		frameMain.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		frameMain.setExtendedState(Frame.MAXIMIZED_BOTH); 
-		frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frameMain = new JFrame();
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/black-cat.png")));
+		this.setResizable(false);
+		this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		this.setExtendedState(Frame.MAXIMIZED_BOTH); 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/*The method setLocationRelativeTo(null) will center our window in the
 		  middle of our screen*/
-		frameMain.setLocationRelativeTo(null);
-		frameMain.getContentPane().setLayout(new BorderLayout(0, 0));
+		this.setLocationRelativeTo(null);
+		this.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(null);
-		frameMain.getContentPane().add(panel, BorderLayout.NORTH);
+		this.getContentPane().add(panel, BorderLayout.NORTH);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JSplitPane splitPane_1 = new JSplitPane();
@@ -139,7 +139,7 @@ public class FrameMain {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.BLACK);
 		panel_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, new Color(0, 0, 0), Color.BLACK, Color.BLACK, Color.BLACK));
-		frameMain.getContentPane().add(panel_2, BorderLayout.SOUTH);
+		this.getContentPane().add(panel_2, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[]{50, 0, 0, 50, 40, 50, 50, 0, 80, 0};
 		gbl_panel_2.rowHeights = new int[]{30, 0, 0, 0, 0, 40, 20, 30, 0};
@@ -228,7 +228,7 @@ public class FrameMain {
 		splitPane.setDividerSize(0);
 		splitPane.setDividerLocation(250);
 		splitPane.setBorder(null);
-		frameMain.getContentPane().add(splitPane, BorderLayout.CENTER);
+		this.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
 		
 		information_panel = new Container();
@@ -286,7 +286,7 @@ public class FrameMain {
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(null);
 		panel_5.setBackground(Color.BLACK);
-		frameMain.getContentPane().add(panel_5, BorderLayout.EAST);
+		this.getContentPane().add(panel_5, BorderLayout.EAST);
 		GridBagLayout gbl_panel_5 = new GridBagLayout();
 		gbl_panel_5.columnWidths = new int[]{250, 0};
 		gbl_panel_5.rowHeights = new int[]{0};
@@ -305,43 +305,6 @@ public class FrameMain {
 			panel_7.add(new ReusableMainFeatures(i));
 		}
 		
-		frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
-		{
-		    public void windowClosing(java.awt.event.WindowEvent windowEvent) 
-		    {
-		        if (JOptionPane.showConfirmDialog(frameMain, 
-		            "Are you sure you want to exit?", "Close?", 
-		            JOptionPane.OK_CANCEL_OPTION,
-		            JOptionPane.CANCEL_OPTION) == JOptionPane.CANCEL_OPTION)
-		        {
-		        	try 
-		        	{
-		        		DBManager.getInstance();
-						DBManager.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ClassNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-		        	
-		        	Date mydate = new Date();
-		        	try {
-						User u = new User();
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-		        	//u.setId();
-		        	//().setLast_access(new SimpleDateFormat("dd-MM-yyyy").format(mydate));
-		        	//System.out.println(Application.getUser().getLast_access());
-		        	
-		            System.exit(0);
-		        }
-		    }
-		});
-		
 		for(int i = 0; i < 50; i++)
 		{
 			panel_4.add(new ReusableCart());
@@ -351,7 +314,7 @@ public class FrameMain {
 	
 	public Window getFrame() {
 		// TODO Auto-generated method stub
-		return frameMain;
+		return this;
 	}
 
 	@SuppressWarnings("unused")

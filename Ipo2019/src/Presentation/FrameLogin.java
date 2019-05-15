@@ -246,7 +246,7 @@ public class FrameLogin
 								if(user.read()) {
 									try {
 										FrameMain window = new FrameMain(user);
-										window.frameMain.setVisible(true);
+										window.setVisible(true);
 										frameLogin.setVisible(false);
 									} catch (Exception e) {
 										e.printStackTrace();
