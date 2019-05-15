@@ -91,9 +91,10 @@ public class FrameMain extends JFrame{
 	/**
 	 * Initialize the contents of the frame.
 	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
 	 */
 	@SuppressWarnings("serial")
-	private void initialize(User user) throws ClassNotFoundException {
+	private void initialize(User user) throws ClassNotFoundException, SQLException {
 		//frameMain = new JFrame();
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/black-cat.png")));
 		this.setResizable(false);

@@ -10,10 +10,14 @@ import javax.swing.JSplitPane;
 import javax.swing.border.LineBorder;
 
 import Domain.Client;
+import Domain.User;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ScrollPaneConstants;
@@ -36,7 +40,7 @@ public class PanelClients extends JPanel {
 	private JPanel panel_6;
 	private JPanel panel_1;
 	
-	public PanelClients() {
+	public PanelClients() throws ClassNotFoundException, SQLException {
 		setBorder(null);
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -105,9 +109,12 @@ public class PanelClients extends JPanel {
 		scrollPane.setViewportView(panel_5);
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		for(int i = 0; i < 10; i++)
+		Client client = new Client();
+		ArrayList<Client> client_list = client.getAllClients();
+		
+		for(int i = 0; i < client_list.size(); i++)
 		{
-			panel_5.add(new ReusableClient(null));
+			panel_5.add(new ReusableClient(client_list.get(i)));
 		}
 		
 		for(int i = 1; i <= 2; i++)
@@ -115,6 +122,6 @@ public class PanelClients extends JPanel {
 			panel_6.add(new ReusableSelection(i, this.getClass().getName()));
 		}
 		
-		panel_1.add(new InfoClient());
+		//panel_1.add(new InfoClient());
 	}
 }

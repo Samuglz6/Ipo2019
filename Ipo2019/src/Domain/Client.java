@@ -1,6 +1,8 @@
 package Domain;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import Persistence.DAOclient;
 
@@ -12,7 +14,7 @@ public class Client
 	private String mail;
 	private String phone;
 	private String last_access;
-	private ImageIcon image;
+	private String image;
 	private DAOclient dao_user;
 	
 	/*--------------------------------------------------------------------------
@@ -20,7 +22,7 @@ public class Client
 	--------------------------------------------------------------------------*/
 	
 	public Client(String name, String surname, String address, String mail, String phone, 
-				String last_access, ImageIcon image) throws ClassNotFoundException, SQLException
+				String last_access, String image) throws ClassNotFoundException, SQLException
 	{
 		this.name = name;
 		this.surname = surname;
@@ -73,6 +75,10 @@ public class Client
 		dao_user.delete(Client.this);
 	}
 	
+	public ArrayList<Client> getAllClients() throws ClassNotFoundException, SQLException{
+		dao_user.read_all();
+		return dao_user.getClients();
+	}
 	
 	/*--------------------------------------------------------------------------
 	   					Necessary setters and getters
@@ -138,11 +144,11 @@ public class Client
 	{
 		this.last_access = last_access;
 	}
-	public ImageIcon getImage()
+	public String getImage()
 	{
 		return image;
 	}
-	public void setImage(ImageIcon image)
+	public void setImage(String image)
 	{
 		this.image = image;
 	}

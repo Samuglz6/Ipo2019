@@ -53,7 +53,7 @@ public class ReusableClient extends JPanel {
 		
 		label = new JLabel("");
 		try {
-			label.setIcon((c.getImage()));
+			label.setIcon(new ImageIcon(ReusableClient.class.getResource(c.getImage())));
 		}catch(Exception e){
 			label.setIcon(new ImageIcon(ReusableClient.class.getResource("/Resources/Images/icon_error.png")));
 		}
@@ -65,7 +65,7 @@ public class ReusableClient extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel("Nombre del usuario");
+		lblNewLabel = new JLabel(c.getName()+" "+c.getSurname());
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
@@ -73,7 +73,7 @@ public class ReusableClient extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		lblNewLabel_1 = new JLabel("Descripcion del Usuario");
+		lblNewLabel_1 = new JLabel(c.getMail()+""+c.getPhone());
 		gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);

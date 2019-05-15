@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 import Domain.Client;
+import Domain.User;
 
 public class DAOclient
 {
@@ -15,6 +16,10 @@ public class DAOclient
 	public DAOclient() throws ClassNotFoundException, SQLException
 	{
 		DBManager.getInstance();
+	}
+	
+	public ArrayList<Client> getClients() {
+		return clientes;
 	}
 	
 	public void insert(Client u) throws SQLException
@@ -62,8 +67,8 @@ public class DAOclient
 	public void delete(Client u) throws SQLException
 	{	
 		sql_sentence = "DELETE * "+
-					   "FROM Persons "+
-					   "WHERE Persons.name = "+u.getName()+";";
+					   "FROM Clients "+
+					   "WHERE Clients.first_name = "+u.getName()+";";
 	
 		DBManager.update(sql_sentence);
 	}
@@ -73,7 +78,7 @@ public class DAOclient
 		Client aux;
 		ResultSet rs;
 		sql_sentence = "SELECT *" +
-					   "FROM Persons;";
+					   "FROM Clients;";
 		
 		rs = DBManager.retrieve(sql_sentence);
 			
@@ -81,7 +86,7 @@ public class DAOclient
 		{
 			aux = new Client(rs.getString("first_name"), rs.getString("surname"), rs.getString("address"),
 							   rs.getString("mail"),rs.getString("phone")
-							   ,rs.getString("last_access"), null);
+							   ,rs.getString("last_access"), rs.getString("image"));
 			clientes.add(aux);
 		}
 	}
