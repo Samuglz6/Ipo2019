@@ -11,6 +11,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
@@ -34,7 +35,7 @@ public class PanelProducts extends JPanel {
 	 */
 	JPanel panel_1;
 	
-	public PanelProducts() {
+	public PanelProducts() throws ClassNotFoundException, SQLException {
 		setBorder(null);
 		setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -107,11 +108,11 @@ public class PanelProducts extends JPanel {
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		Product product = new Product();
-		ArrayList<Client> client_list = product();
+		ArrayList<Product> product_list = product.getAllProducts();
 		
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < product_list.size(); i++)
 		{
-			panel_5.add(new ReusableProduct());
+			panel_5.add(new ReusableProduct(product_list.get(i)));
 		}
 		for(int i = 1; i <= 5; i++)
 		{

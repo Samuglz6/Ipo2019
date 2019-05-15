@@ -14,6 +14,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.border.SoftBevelBorder;
 
+import Domain.Product;
+
 @SuppressWarnings("serial")
 public class ReusableProduct extends JPanel {
 
@@ -33,11 +35,11 @@ public class ReusableProduct extends JPanel {
 	private JButton btnNewButton;
 	private JLabel lblPrecio;
 	
-	public ReusableProduct() {
-		iniciar();
+	public ReusableProduct(Product p) {
+		iniciar(p);
 	}
 	
-	private void iniciar()
+	private void iniciar(Product p)
 	{
 		setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		gridBagLayout = new GridBagLayout();
@@ -56,7 +58,7 @@ public class ReusableProduct extends JPanel {
 		gbc_label.gridy = 1;
 		add(label, gbc_label);
 		
-		lblNewLabel = new JLabel("Nombre del Producto");
+		lblNewLabel = new JLabel(p.getName());
 		gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
