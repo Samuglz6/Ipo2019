@@ -11,6 +11,8 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ScrollPaneConstants;
@@ -20,6 +22,9 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
+
+import Domain.Client;
+import Domain.Product;
 
 @SuppressWarnings("serial")
 public class PanelProducts extends JPanel {
@@ -100,6 +105,9 @@ public class PanelProducts extends JPanel {
 		JPanel panel_5 = new JPanel();
 		scrollPane.setViewportView(panel_5);
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		Product product = new Product();
+		ArrayList<Client> client_list = product();
 		
 		for(int i = 0; i < 10; i++)
 		{

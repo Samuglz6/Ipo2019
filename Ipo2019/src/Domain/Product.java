@@ -1,6 +1,7 @@
 package Domain;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Persistence.DAOProduct;
 
@@ -22,7 +23,6 @@ public class Product {
 		this.dao_product = dao_product;
 	}
 	
-	
 	public Product() throws ClassNotFoundException, SQLException
 	{
 		dao_product = new DAOProduct();
@@ -36,6 +36,11 @@ public class Product {
 	public void readUser() throws SQLException
 	{
 		dao_product.read(Product.this);
+	}
+	
+	public ArrayList<Product> getAllProducts() throws ClassNotFoundException, SQLException{
+		dao_product.read_all();
+		return dao_product.getProducts();
 	}
 	
 	public void updateUser() throws SQLException

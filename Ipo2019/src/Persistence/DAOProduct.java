@@ -73,7 +73,10 @@ public class DAOProduct {
 		}
 	}
 	
-	
+	public ArrayList<Product> getProducts()
+	{
+		return productos;
+	}
 	
 	
 }
