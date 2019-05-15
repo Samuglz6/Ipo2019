@@ -86,6 +86,7 @@ public class ReusableMainFeatures extends JPanel {
 				comprobarSeleccionado(p);
 				setBackground(new Color(0,0,0));
 				lblNewLabel.setForeground(new Color(255,255,255));
+				//((FrameMain)p.getTopLevelAncestor()).cambioSeleccion(lblNewLabel.getText());;
 			}
 		});
 	}
@@ -93,11 +94,15 @@ public class ReusableMainFeatures extends JPanel {
 	{
 		for(int i = 0; i < p.getParent().getComponentCount(); i++)
 		{
-			if(p.getParent().getComponent(i).getBackground().getRGB() == -16777216)
-			{
-				p.getParent().getComponent(i).setBackground(new Color(255,255,255));
-				p.getParent().getComponent(i).setForeground(new Color(0,0,0));
-			}
+			p.getParent().getComponent(i).setBackground(new Color(255,255,255));
+			((ReusableMainFeatures) p.getParent().getComponent(i)).cambiarColorTexto();
 		}
 	}
+	
+	private void cambiarColorTexto()
+	{
+		lblNewLabel.setForeground(new Color(0,0,0));
+	}
+	
+	
 }

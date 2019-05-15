@@ -20,7 +20,10 @@ import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 
 import javax.swing.JTextPane;
@@ -50,7 +53,9 @@ import java.awt.Frame;
 public class FrameMain {
 
 	JFrame frameMain;
-	boolean selected = false;
+	String seleccion;
+	JPanel panel_7;
+	Container information_panel;
 	/**
 	 * Launch the application.
 	 */
@@ -226,8 +231,8 @@ public class FrameMain {
 		frameMain.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
 		
-		JPanel information_panel = new JPanel();
-		information_panel.setBorder(null);
+		information_panel = new Container();
+		//((JComponent) information_panel).setBorder(null);
 		splitPane.setRightComponent(information_panel);
 		information_panel.setLayout(new CardLayout(0, 0));
 		
@@ -290,7 +295,7 @@ public class FrameMain {
 		panel_5.setLayout(gbl_panel_5);
 
 		
-		JPanel panel_7 = new JPanel();
+		panel_7 = new JPanel();
 		panel_7.setBorder(new LineBorder(new Color(0,0,0)));
 		splitPane.setLeftComponent(panel_7);
 		panel_7.setLayout(new GridLayout(0,1,0,0));
@@ -342,6 +347,8 @@ public class FrameMain {
 			panel_4.add(new ReusableCart());
 		}
 	}
+	
+	
 	public Window getFrame() {
 		// TODO Auto-generated method stub
 		return frameMain;
@@ -352,8 +359,15 @@ public class FrameMain {
 		JOptionPane.showMessageDialog(null, s);
 	}
 	
-	public void setSelected(boolean s)
+	public void cambioSeleccion(String s)
 	{
-		selected = true;
+		switch (s)
+		{
+			case "Productos":
+			case "Clientes":
+			case "Pedidos":
+			case "Ofertas":
+			((CardLayout) information_panel.getLayout()).show(information_panel, s);
+		}
 	}
 }
