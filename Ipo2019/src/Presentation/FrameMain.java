@@ -253,37 +253,6 @@ public class FrameMain extends JFrame{
 		JPanel ofertas_panel = new PanelOffers();
 		information_panel.add(ofertas_panel, "Ofertas");
 		
-		/*JTree selection_tree = new JTree();
-		selection_tree.setRootVisible(false);
-		selection_tree.setBorder(new LineBorder(Color.BLACK, 2));
-		selection_tree.addTreeSelectionListener(new TreeSelectionListener() {
-			public void valueChanged(TreeSelectionEvent arg0) {
-				String nodo = (arg0.getPath().getLastPathComponent()).toString();
-				switch (nodo)
-				{
-					case "Productos":
-					case "Clientes":
-					case "Pedidos":
-					case "Ofertas":
-						((CardLayout) information_panel.getLayout()).show(information_panel, nodo);
-				}
-
-			}
-		});
-		selection_tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-		selection_tree.setModel(new DefaultTreeModel(
-			new DefaultMutableTreeNode("Inicio") {
-				{
-					add(new DefaultMutableTreeNode("Ofertas"));
-					add(new DefaultMutableTreeNode("Productos"));
-					add(new DefaultMutableTreeNode("Clientes"));
-					add(new DefaultMutableTreeNode("Pedidos"));
-				}
-			}
-		));
-		selection_tree.setFont(new Font("Sitka Subheading", Font.PLAIN, 33));
-		splitPane.setLeftComponent(selection_tree);*/
-		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(null);
 		panel_5.setBackground(Color.BLACK);
