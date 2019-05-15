@@ -55,7 +55,7 @@ public class PanelUser extends JPanel {
 		gbc_lblNewLabel_1.gridy = 2;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel(user.getPersonalId());
+		JLabel lblNewLabel_2 = new JLabel();
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
@@ -75,7 +75,7 @@ public class PanelUser extends JPanel {
 		gbc_lblNewLabel_3.gridy = 5;
 		add(lblNewLabel_3, gbc_lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("20/04/2019");
+		JLabel lblNewLabel_4 = new JLabel();
 		lblNewLabel_4.setForeground(Color.WHITE);
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
@@ -85,6 +85,11 @@ public class PanelUser extends JPanel {
 		gbc_lblNewLabel_4.gridx = 3;
 		gbc_lblNewLabel_4.gridy = 6;
 		add(lblNewLabel_4, gbc_lblNewLabel_4);
+		
+		if(user != null) {
+			lblNewLabel_2.setText(user.getPersonalId());
+			lblNewLabel_4.setText("20-10-2001");
+		}
 
 	}
 

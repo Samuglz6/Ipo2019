@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
 import java.sql.SQLException;
+import java.util.Date;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -48,6 +50,7 @@ import java.awt.Frame;
 public class FrameMain {
 
 	JFrame frameMain;
+	boolean selected = false;
 	/**
 	 * Launch the application.
 	 */
@@ -244,7 +247,7 @@ public class FrameMain {
 		JPanel ofertas_panel = new PanelOffers();
 		information_panel.add(ofertas_panel, "Ofertas");
 		
-		JTree selection_tree = new JTree();
+		/*JTree selection_tree = new JTree();
 		selection_tree.setRootVisible(false);
 		selection_tree.setBorder(new LineBorder(Color.BLACK, 2));
 		selection_tree.addTreeSelectionListener(new TreeSelectionListener() {
@@ -273,7 +276,7 @@ public class FrameMain {
 			}
 		));
 		selection_tree.setFont(new Font("Sitka Subheading", Font.PLAIN, 33));
-		splitPane.setLeftComponent(selection_tree);
+		splitPane.setLeftComponent(selection_tree);*/
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(null);
@@ -286,7 +289,18 @@ public class FrameMain {
 		gbl_panel_5.rowWeights = new double[]{Double.MIN_VALUE};
 		panel_5.setLayout(gbl_panel_5);
 
-		/*frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBorder(new LineBorder(new Color(0,0,0)));
+		splitPane.setLeftComponent(panel_7);
+		panel_7.setLayout(new GridLayout(0,1,0,0));
+		
+		for(int i = 1; i < 7; i++)
+		{
+			panel_7.add(new ReusableMainFeatures(i));
+		}
+		
+		frameMain.addWindowListener(new java.awt.event.WindowAdapter() 
 		{
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) 
 		    {
@@ -306,14 +320,23 @@ public class FrameMain {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-		        	//Date mydate = new Date();
-		        	//Application.getUser().setLast_access(new SimpleDateFormat("dd-MM-yyyy").format(mydate));
+		        	
+		        	Date mydate = new Date();
+		        	try {
+						User u = new User();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		        	//u.setId();
+		        	//().setLast_access(new SimpleDateFormat("dd-MM-yyyy").format(mydate));
 		        	//System.out.println(Application.getUser().getLast_access());
 		        	
 		            System.exit(0);
 		        }
 		    }
-		});*/
+		});
+		
 		for(int i = 0; i < 50; i++)
 		{
 			panel_4.add(new ReusableCart());
@@ -327,5 +350,10 @@ public class FrameMain {
 	@SuppressWarnings("unused")
 	private void msgbox(String s) {
 		JOptionPane.showMessageDialog(null, s);
+	}
+	
+	public void setSelected(boolean s)
+	{
+		selected = true;
 	}
 }

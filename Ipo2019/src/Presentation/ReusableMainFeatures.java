@@ -49,24 +49,6 @@ public class ReusableMainFeatures extends JPanel {
 		add(lblNewLabel, gbc_lblNewLabel);
 		
 		selection(i);
-		
-		addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				color = getBackground();
-				setBackground(new Color(250,250,190));
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				setBackground(color);
-			}
-		
-			@Override
-			public void mousePressed(MouseEvent e) {
-				setBackground(new Color(0,0,0));
-				lblNewLabel.setForeground(new Color(255,255,255));
-			}
-		});
 	}
 	
 	private void selection(int i)
@@ -75,15 +57,19 @@ public class ReusableMainFeatures extends JPanel {
 		{
 			case 1:
 				lblNewLabel.setText("Ofertas");
+				acoplar(this);
 			break;
 			case 2:
 				lblNewLabel.setText("Productos");
+				acoplar(this);
 			break;
 			case 3:
 				lblNewLabel.setText("Clientes");
+				acoplar(this);
 			break;
 			case 4:
 				lblNewLabel.setText("Pedidos");
+				acoplar(this);
 			break;
 			default:
 				lblNewLabel.setText("");
@@ -92,9 +78,26 @@ public class ReusableMainFeatures extends JPanel {
 		}
 	}
 	
-	private void cambiar()
+	private void acoplar(JPanel p)
 	{
-		
+		p.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				comprobarSeleccionado(p);
+				setBackground(new Color(0,0,0));
+				lblNewLabel.setForeground(new Color(255,255,255));
+			}
+		});
 	}
-
+	private void comprobarSeleccionado(JPanel p)
+	{
+		for(int i = 0; i < p.getParent().getComponentCount(); i++)
+		{
+			if(p.getParent().getComponent(i).getBackground().getRGB() == -16777216)
+			{
+				p.getParent().getComponent(i).setBackground(new Color(255,255,255));
+				p.getParent().getComponent(i).setForeground(new Color(0,0,0));
+			}
+		}
+	}
 }

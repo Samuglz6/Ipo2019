@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -70,7 +71,7 @@ public class FrameLogin
 		user = new User();
 		frameLogin = new JFrame();
 		frameLogin.setResizable(false);
-		frameLogin.setBounds(100, 100, 472, 715);
+		frameLogin.setBounds(100, 100, 472, 770);
 		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//frameLogin.setUndecorated(true);
 		
@@ -145,10 +146,10 @@ public class FrameLogin
 		panel_3.setBackground(Color.BLACK);
 		frameLogin.getContentPane().add(panel_3, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel_3 = new GridBagLayout();
-		gbl_panel_3.columnWidths = new int[]{85, 0, 30, 0, 0, 0};
-		gbl_panel_3.rowHeights = new int[]{50, 0, 0, 0, 30, 0};
-		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_3.columnWidths = new int[]{85, 0, 30, 0, 0, 0, 0};
+		gbl_panel_3.rowHeights = new int[]{40, 20, 20, 0, 0, 0, 30, 0};
+		gbl_panel_3.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel_3.setLayout(gbl_panel_3);
 		
 		lblNewLabel_1 = new JLabel("Registrarse ahora");
@@ -163,12 +164,23 @@ public class FrameLogin
 				lblNewLabel_1.setForeground(color);
 			}
 		});
+		
+		JLabel lblNewLabel_5 = new JLabel();
+		lblNewLabel_5.setVisible(false);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_5.setForeground(Color.RED);
+		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
+		gbc_lblNewLabel_5.gridwidth = 3;
+		gbc_lblNewLabel_5.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_5.gridx = 2;
+		gbc_lblNewLabel_5.gridy = 1;
+		panel_3.add(lblNewLabel_5, gbc_lblNewLabel_5);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 3;
-		gbc_lblNewLabel_1.gridy = 1;
+		gbc_lblNewLabel_1.gridy = 3;
 		panel_3.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("Recupere su contrase\u00F1a");
@@ -188,7 +200,7 @@ public class FrameLogin
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_2.gridx = 3;
-		gbc_lblNewLabel_2.gridy = 2;
+		gbc_lblNewLabel_2.gridy = 4;
 		panel_3.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -198,7 +210,7 @@ public class FrameLogin
 		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridx = 1;
-		gbc_comboBox.gridy = 3;
+		gbc_comboBox.gridy = 5;
 		panel_3.add(comboBox, gbc_comboBox);
 		
 		JPanel panel_4 = new JPanel();
@@ -219,25 +231,42 @@ public class FrameLogin
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(textField.getText() != null && textField_1.getText() != null) {
-					try {
-						user = new User();
-						user.setUserName(textField.getText());
-						user.setPass(textField_1.getText());
-						if(user.read()) {
+				textField.setBackground(Color.WHITE);
+				textField_1.setBackground(Color.WHITE);
+				lblNewLabel_5.setVisible(false);
+				
+				if(!(textField.getText().isEmpty() || textField_1.getText().isEmpty())) {
+					if(!textField.getText().isEmpty()){
+						if(!textField_1.getText().isEmpty()) {
+						
 							try {
-								FrameMain window = new FrameMain(user);
-								window.frameMain.setVisible(true);
-								frameLogin.setVisible(false);
-							} catch (Exception e) {
+								user = new User();
+								user.setUserName(textField.getText());
+								user.setPass(textField_1.getText());
+								if(user.read()) {
+									try {
+										FrameMain window = new FrameMain(user);
+										window.frameMain.setVisible(true);
+										frameLogin.setVisible(false);
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+								}
+							}catch (ClassNotFoundException | SQLException e) {				
 								e.printStackTrace();
-							}
+								lblNewLabel_5.setText("Usuario o Contraseña incorrectos.");
+								lblNewLabel_5.setVisible(true);
+							}					
+						}else {
+							textField_1.setBackground(Color.RED);
 						}
-					} catch (ClassNotFoundException | SQLException e) {				
-						e.printStackTrace();
-					}					
-				}else {
-					
+					}else{
+						textField.setBackground(Color.RED);
+					}
+				}else{
+					System.out.println("aqui");
+					textField.setBackground(Color.RED);
+					textField_1.setBackground(Color.RED);
 				}
 			}
 		});
@@ -343,7 +372,7 @@ public class FrameLogin
 		gbl_panel_15.rowWeights = new double[]{1.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
 		panel_15.setLayout(gbl_panel_15);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
