@@ -87,8 +87,8 @@ public class PanelUser extends JPanel {
 		add(lblNewLabel_4, gbc_lblNewLabel_4);
 		
 		if(user != null) {
-			lblNewLabel_2.setText(user.getPersonalId());
-			lblNewLabel_4.setText("20-10-2001");
+			lblNewLabel_2.setText("employee_id"+user.getPersonalId()+"_"+user.getUserName());
+			lblNewLabel_4.setText("20-4-2019");
 		}
 
 	}

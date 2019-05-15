@@ -387,10 +387,5 @@ public class FrameLogin
 		
 		
 		//panel.setBackground(MainWindow.class.getResource("/Resources/Images/login_background.png").toString());
-		
-		/*---------------------------------------------------------------------------------
-			For furthermore comprehension of the program, every action listener have been
-			grouped by the component attached to it. 
-		---------------------------------------------------------------------------------*/
 	}        
 } 
