@@ -28,6 +28,9 @@ import java.awt.CardLayout;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
+
+import Domain.User;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.Font;
 import javax.swing.event.TreeSelectionListener;
@@ -71,9 +74,10 @@ public class FrameMain {
 	 * Create the application.
 	 * @throws ClassNotFoundException 
 	 * @throws SQLException 
+	 * @wbp.parser.entryPoint
 	 */
-	public FrameMain() throws ClassNotFoundException, SQLException {
-		initialize();
+	public FrameMain(User user) throws ClassNotFoundException, SQLException {
+		initialize(user);
 	}
 
 	/**
@@ -81,7 +85,7 @@ public class FrameMain {
 	 * @throws ClassNotFoundException 
 	 */
 	@SuppressWarnings("serial")
-	private void initialize() throws ClassNotFoundException {
+	private void initialize(User user) throws ClassNotFoundException {
 		frameMain = new JFrame();
 		frameMain.setIconImage(Toolkit.getDefaultToolkit().getImage(FrameMain.class.getResource("/Resources/Images/black-cat.png")));
 		frameMain.setResizable(false);
@@ -104,7 +108,7 @@ public class FrameMain {
 		splitPane_1.setBorder(null);
 		panel.add(splitPane_1, BorderLayout.CENTER);
 		
-		JPanel panel_1 = new PanelUser();
+		JPanel panel_1 = new PanelUser(user);
 		panel_1.setBorder(null);
 		splitPane_1.setLeftComponent(panel_1);
 		

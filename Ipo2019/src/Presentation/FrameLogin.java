@@ -220,48 +220,22 @@ public class FrameLogin
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(textField.getText() != null && textField_1.getText() != null) {
-
 					try {
 						user = new User();
 						user.setUserName(textField.getText());
 						user.setPass(textField_1.getText());
 						if(user.read()) {
-						System.out.println("READ TRUE");	
-						}
-					} catch (ClassNotFoundException | SQLException e) {
-						
-						e.printStackTrace();
-					}
-					
-					
-					
-					
-					
-					
-					
-					/*try {
-						ArrayList<User> users = user.getAllUsers();
-						for(int i = 0; i < users.size(); i++) {
-							System.out.println("Comparando " + users.get(i).getUserName() + " con " + textField.getText());
-							System.out.println("Comparando " + users.get(i).getPass() + " con " + textField_1.getText());
-							if (users.get(i).getUserName().equalsIgnoreCase(textField.getText())) {
-								if(users.get(i).getUserName().equalsIgnoreCase(textField_1.getText())) {
-									try {
-										FrameMain window = new FrameMain();
-										window.frameMain.setVisible(true);
-										frameLogin.setVisible(false);
-									} catch (Exception e) {
-										e.printStackTrace();
-									}
-									
-								}		
+							try {
+								FrameMain window = new FrameMain(user);
+								window.frameMain.setVisible(true);
+								frameLogin.setVisible(false);
+							} catch (Exception e) {
+								e.printStackTrace();
 							}
 						}
-					} catch (ClassNotFoundException | SQLException e) {
-						
+					} catch (ClassNotFoundException | SQLException e) {				
 						e.printStackTrace();
-					}*/
-					
+					}					
 				}else {
 					
 				}

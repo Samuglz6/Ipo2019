@@ -11,6 +11,9 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
+
+import Domain.User;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
@@ -20,7 +23,7 @@ public class PanelUser extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelUser() {
+	public PanelUser(User user) {
 		setBorder(BorderFactory.createRaisedBevelBorder());
 		setBackground(Color.BLACK);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -52,7 +55,7 @@ public class PanelUser extends JPanel {
 		gbc_lblNewLabel_1.gridy = 2;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("NombreDeEmpleado_101");
+		JLabel lblNewLabel_2 = new JLabel(user.getPersonalId());
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
@@ -72,7 +75,7 @@ public class PanelUser extends JPanel {
 		gbc_lblNewLabel_3.gridy = 5;
 		add(lblNewLabel_3, gbc_lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("10/10/2018");
+		JLabel lblNewLabel_4 = new JLabel("20/04/2019");
 		lblNewLabel_4.setForeground(Color.WHITE);
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
